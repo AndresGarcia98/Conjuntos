@@ -51,7 +51,7 @@
             // lbConjuntoB
             // 
             this.lbConjuntoB.AutoSize = true;
-            this.lbConjuntoB.Location = new System.Drawing.Point(12, 41);
+            this.lbConjuntoB.Location = new System.Drawing.Point(255, 15);
             this.lbConjuntoB.Name = "lbConjuntoB";
             this.lbConjuntoB.Size = new System.Drawing.Size(187, 13);
             this.lbConjuntoB.TabIndex = 1;
@@ -60,7 +60,7 @@
             // lbConjuntoC
             // 
             this.lbConjuntoC.AutoSize = true;
-            this.lbConjuntoC.Location = new System.Drawing.Point(12, 67);
+            this.lbConjuntoC.Location = new System.Drawing.Point(484, 15);
             this.lbConjuntoC.Name = "lbConjuntoC";
             this.lbConjuntoC.Size = new System.Drawing.Size(187, 13);
             this.lbConjuntoC.TabIndex = 2;
@@ -68,28 +68,28 @@
             // 
             // txtConjuntoA
             // 
-            this.txtConjuntoA.Location = new System.Drawing.Point(205, 12);
+            this.txtConjuntoA.Location = new System.Drawing.Point(68, 31);
             this.txtConjuntoA.Name = "txtConjuntoA";
             this.txtConjuntoA.Size = new System.Drawing.Size(45, 20);
             this.txtConjuntoA.TabIndex = 3;
             // 
             // txtConjuntoB
             // 
-            this.txtConjuntoB.Location = new System.Drawing.Point(205, 38);
+            this.txtConjuntoB.Location = new System.Drawing.Point(312, 31);
             this.txtConjuntoB.Name = "txtConjuntoB";
             this.txtConjuntoB.Size = new System.Drawing.Size(45, 20);
             this.txtConjuntoB.TabIndex = 4;
             // 
             // txtConjuntoC
             // 
-            this.txtConjuntoC.Location = new System.Drawing.Point(205, 64);
+            this.txtConjuntoC.Location = new System.Drawing.Point(549, 31);
             this.txtConjuntoC.Name = "txtConjuntoC";
             this.txtConjuntoC.Size = new System.Drawing.Size(45, 20);
             this.txtConjuntoC.TabIndex = 5;
             // 
             // bttGuardarA
             // 
-            this.bttGuardarA.Location = new System.Drawing.Point(256, 12);
+            this.bttGuardarA.Location = new System.Drawing.Point(56, 57);
             this.bttGuardarA.Name = "bttGuardarA";
             this.bttGuardarA.Size = new System.Drawing.Size(69, 20);
             this.bttGuardarA.TabIndex = 6;
@@ -99,7 +99,7 @@
             // 
             // bttGuardarB
             // 
-            this.bttGuardarB.Location = new System.Drawing.Point(256, 38);
+            this.bttGuardarB.Location = new System.Drawing.Point(299, 57);
             this.bttGuardarB.Name = "bttGuardarB";
             this.bttGuardarB.Size = new System.Drawing.Size(69, 20);
             this.bttGuardarB.TabIndex = 7;
@@ -109,7 +109,7 @@
             // 
             // bttGuardarC
             // 
-            this.bttGuardarC.Location = new System.Drawing.Point(256, 64);
+            this.bttGuardarC.Location = new System.Drawing.Point(539, 57);
             this.bttGuardarC.Name = "bttGuardarC";
             this.bttGuardarC.Size = new System.Drawing.Size(69, 20);
             this.bttGuardarC.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 333);
+            this.ClientSize = new System.Drawing.Size(680, 553);
             this.Controls.Add(this.bttGuardarC);
             this.Controls.Add(this.bttGuardarB);
             this.Controls.Add(this.bttGuardarA);

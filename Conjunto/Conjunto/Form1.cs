@@ -12,6 +12,7 @@ namespace Conjunto
 {
     public partial class Form1 : Form
     {
+        string mensaje = "El conjunto es vacio";
         public Form1()
         {
             InitializeComponent();
