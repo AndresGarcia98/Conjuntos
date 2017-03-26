@@ -16,5 +16,29 @@ namespace Conjunto
         {
             InitializeComponent();
         }
+
+        private void bttGuardarA_Click(object sender, EventArgs e)
+        {
+            if(txtConjuntoA.Text != "")
+            {
+                int nElementosA = Convert.ToInt32(txtConjuntoA.Text);
+            }
+        }
+
+        private void bttGuardarB_Click(object sender, EventArgs e)
+        {
+            if(txtConjuntoB.Text != "")
+            {
+                int nElementosB = Convert.ToInt32(txtConjuntoB.Text);
+            }
+        }
+
+        private void bttGuardarC_Click(object sender, EventArgs e)
+        {
+            if(txtConjuntoC.Text != "")
+            {
+                int nElementosC = Convert.ToInt32(txtConjuntoC.Text);
+            }
+        }
     }
 }

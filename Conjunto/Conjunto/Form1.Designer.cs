@@ -95,6 +95,7 @@
             this.bttGuardarA.TabIndex = 6;
             this.bttGuardarA.Text = "Guardar";
             this.bttGuardarA.UseVisualStyleBackColor = true;
+            this.bttGuardarA.Click += new System.EventHandler(this.bttGuardarA_Click);
             // 
             // bttGuardarB
             // 
@@ -104,6 +105,7 @@
             this.bttGuardarB.TabIndex = 7;
             this.bttGuardarB.Text = "Guardar";
             this.bttGuardarB.UseVisualStyleBackColor = true;
+            this.bttGuardarB.Click += new System.EventHandler(this.bttGuardarB_Click);
             // 
             // bttGuardarC
             // 
@@ -113,6 +115,7 @@
             this.bttGuardarC.TabIndex = 8;
             this.bttGuardarC.Text = "Guardar";
             this.bttGuardarC.UseVisualStyleBackColor = true;
+            this.bttGuardarC.Click += new System.EventHandler(this.bttGuardarC_Click);
             // 
             // Form1
             // 
@@ -129,7 +132,7 @@
             this.Controls.Add(this.lbConjuntoB);
             this.Controls.Add(this.lbConjuntoA);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Conjuntos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
