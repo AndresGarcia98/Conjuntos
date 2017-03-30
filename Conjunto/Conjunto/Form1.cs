@@ -23,6 +23,9 @@ namespace Conjunto
             if(txtConjuntoA.Text != "")
             {
                 int nElementosA = Convert.ToInt32(txtConjuntoA.Text);
+                ConjuntoA a = new ConjuntoA(nElementosA);
+                a.Show();
+
             }
         }
 
