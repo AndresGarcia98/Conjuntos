@@ -12,7 +12,11 @@ namespace Conjunto
 {
     public partial class Form1 : Form
     {
-        string mensaje = "El conjunto es vacio";
+        List<int> conjuntoA = new List<int>();
+        List<int> conjuntoB = new List<int>();
+        List<int> conjuntoC = new List<int>();
+        List<int> conjuntoU = new List<int>();
+        private string mensaje = "El conjunto es vacio";
         public Form1()
         {
             InitializeComponent();
@@ -23,9 +27,8 @@ namespace Conjunto
             if(txtConjuntoA.Text != "")
             {
                 int nElementosA = Convert.ToInt32(txtConjuntoA.Text);
-                ConjuntoA a = new ConjuntoA(nElementosA);
-                a.Show();
-
+                Form3 fm = new Form3(nElementosA, 1);
+                fm.Show();
             }
         }
 
@@ -34,6 +37,8 @@ namespace Conjunto
             if(txtConjuntoB.Text != "")
             {
                 int nElementosB = Convert.ToInt32(txtConjuntoB.Text);
+                Form3 Conjutos = new Form3(nElementosB, 2);
+                Conjutos.Show();
             }
         }
 
@@ -42,6 +47,26 @@ namespace Conjunto
             if(txtConjuntoC.Text != "")
             {
                 int nElementosC = Convert.ToInt32(txtConjuntoC.Text);
+                Form3 Conjutos = new Form3(nElementosC, 3);
+                Conjutos.Show();
+            }
+        }
+
+        public void ingresarElementos(int n, int e)
+        {
+            switch(n)
+            {
+                case 1:
+                    conjuntoA.Add(e);
+                break;
+
+                case 2:
+                    conjuntoB.Add(e);
+                break;
+
+                case 3:
+                    conjuntoC.Add(e);
+                break;
             }
         }
     }
