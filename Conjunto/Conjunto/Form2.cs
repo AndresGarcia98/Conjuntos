@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 namespace Conjunto
 {
-    enum Conjunto { A = 1, B, C}
-    public partial class Form3 : Form
+    enum Conjunto { A = 1, B, C }
+    public partial class Form2 : Form
     {
         private int n;
         public int Elementos
@@ -31,12 +31,12 @@ namespace Conjunto
         {
             get { return count; }
         }
-        public Form3()
+        public Form2()
         {
             InitializeComponent();
         }
 
-        public Form3(int nElementos, int nConjunto)
+        public Form2(int nElementos, int nConjunto)
         {
             InitializeComponent();
             n = nElementos;
@@ -61,11 +61,11 @@ namespace Conjunto
         {
             lbMensaje.Text = "";
             Form1 fm1 = new Form1();
-            if (txtConjnto.Text != "" /*|| Convert.ToInt32(txtConjnto.Text) < 0*/ )
+            if (txtConjunto.Text != "")
             {
                 count++;
                 lbMensaje.Text = "Ingrese el " + count + " del Conjunto" + (Conjunto)conjunto;
-                int elemento = Convert.ToInt32(txtConjnto.Text);
+                int elemento = Convert.ToInt32(txtConjunto.Text);
                 switch (conjunto)
                 {
                     case 1:
@@ -87,14 +87,11 @@ namespace Conjunto
                     lbMensaje.Text = "Ingrese el " + count + " del Conjunto" + (Conjunto)conjunto;
 
             }
-            txtConjnto.Text = "";
+            txtConjunto.Text = "";
             if (count - 1 == n)
             {
                 this.Hide();
-            }
+}
         }
     }
 }
-
-
-

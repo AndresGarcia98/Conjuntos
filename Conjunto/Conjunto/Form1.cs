@@ -27,7 +27,7 @@ namespace Conjunto
             if(txtConjuntoA.Text != "")
             {
                 int nElementosA = Convert.ToInt32(txtConjuntoA.Text);
-                Form3 fm = new Form3(nElementosA, 1);
+                Form2 fm = new Form2(nElementosA, 1);
                 fm.Show();
             }
         }
@@ -37,8 +37,8 @@ namespace Conjunto
             if(txtConjuntoB.Text != "")
             {
                 int nElementosB = Convert.ToInt32(txtConjuntoB.Text);
-                Form3 Conjutos = new Form3(nElementosB, 2);
-                Conjutos.Show();
+                Form2 fm = new Form2(nElementosB, 2);
+                fm.Show();
             }
         }
 
@@ -47,11 +47,10 @@ namespace Conjunto
             if(txtConjuntoC.Text != "")
             {
                 int nElementosC = Convert.ToInt32(txtConjuntoC.Text);
-                Form3 Conjutos = new Form3(nElementosC, 3);
-                Conjutos.Show();
+                Form2 fm = new Form2(nElementosC, 3);
+                fm.Show();
             }
         }
-
         public void ingresarElementos(int n, int e)
         {
             switch(n)
