@@ -91,7 +91,7 @@ namespace Conjunto
             if (count - 1 == n)
             {
                 this.Hide();
-}
+            }
         }
     }
 }
