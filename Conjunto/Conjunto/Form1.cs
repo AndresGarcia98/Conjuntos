@@ -16,8 +16,24 @@ namespace Conjunto
         List<int> conjuntoB = new List<int>();
         List<int> conjuntoC = new List<int>();
         List<int> conjuntoU = new List<int>();
-        private string mensaje = "El conjunto es vacio";
+
         private int countConjuntos;
+        public int CountConjuntos
+        {
+            get { return countConjuntos; }
+        }
+
+        private int count;
+        public int Count
+        {
+            get { return count; }
+        }
+
+        private int aux;
+        public int Aux
+        {
+            get { return aux }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -117,8 +133,103 @@ namespace Conjunto
                                     }
                                 }
                             }
-                            break;
+                        break;
                     }
+                }
+            }
+        }
+
+        //codigo que hace que aparezca en el txtOperaciones segun lo que el usaurio presiono en los botones
+        private void bttA_Click(object sender, EventArgs e)
+        {
+            string cjA = "A";
+            txtOperaciones.Text = txtOperaciones.Text + cjA;
+        }
+
+        private void bttB_Click(object sender, EventArgs e)
+        {
+            string cjB = "B";
+            txtOperaciones.Text = txtOperaciones.Text + cjB;
+        }
+
+        private void bttC_Click(object sender, EventArgs e)
+        {
+            string cjC = "C";
+            txtOperaciones.Text = txtOperaciones.Text + cjC;
+        }
+
+        private void bttUnion_Click(object sender, EventArgs e)
+        {
+            string union = "U";
+            txtOperaciones.Text = txtOperaciones.Text + union;
+        }
+
+        private void bttIntersepcion_Click(object sender, EventArgs e)
+        {
+            string interseccion = "";
+            txtOperaciones.Text = txtOperaciones.Text + interseccion;
+        }
+
+        private void bttDirecenciaSimetrica_Click(object sender, EventArgs e)
+        {
+            string dfSimetrica = "A";
+            txtOperaciones.Text = txtOperaciones.Text + dfSimetrica;
+        }
+
+        private void bttDiferencia_Click(object sender, EventArgs e)
+        {
+            string diferencia = "-";
+            txtOperaciones.Text = txtOperaciones.Text + diferencia;
+        }
+
+        private void txtComplemento_Click(object sender, EventArgs e)
+        {
+            string complemento = "'";
+            txtOperaciones.Text = txtOperaciones.Text + complemento;
+        }
+
+        private void txtParentisisAbrir_Click(object sender, EventArgs e)
+        {
+            string parentesis = "(";
+            txtOperaciones.Text = txtOperaciones.Text + parentesis;
+            count++;
+        }
+
+        private void bttParentesisCerrar_Click(object sender, EventArgs e)
+        {
+            string parentesis = ")";
+            txtOperaciones.Text = txtOperaciones.Text + parentesis;
+        }
+        private void bttCalcular_Click(object sender, EventArgs e)
+        {
+            if(txtOperaciones.Text != "")
+            {
+                calcularOperaciones(txtOperaciones.Text);
+            }
+            else
+            {
+                MessageBox.Show("No puede estar vacio si desea ralizar alguna operación", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        //Aqui termina.
+
+        public void calcularOperaciones(string operacion)
+        {
+            for(int i = 0; i < operacion.Length; i++)
+            {
+                if(operacion.Equals("C"))
+                {
+                    aux++;
+                    continue;
+                }
+                else if(aux == count)
+                {
+
+                }
+                else
+                {
+                    continue;
                 }
             }
         }
