@@ -32,7 +32,7 @@ namespace Conjunto
         private int aux;
         public int Aux
         {
-            get { return aux }
+            get { return aux; }
         }
         public Form1()
         {
@@ -91,7 +91,6 @@ namespace Conjunto
                 break;
             }
         }
-
         public void llenarConjuntoU(int count)
         {
             if(count == 3)
@@ -218,7 +217,7 @@ namespace Conjunto
         {
             for(int i = 0; i < operacion.Length; i++)
             {
-                if(operacion.Equals("C"))
+                if(operacion.Equals("("))
                 {
                     aux++;
                     continue;
