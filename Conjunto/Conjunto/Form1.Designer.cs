@@ -50,6 +50,7 @@
             this.bttParentesisCerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttCalcular = new System.Windows.Forms.Button();
+            this.txtCjA = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -240,6 +241,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCjA);
             this.groupBox1.Controls.Add(this.bttCalcular);
             this.groupBox1.Controls.Add(this.txtConjuntoB);
             this.groupBox1.Controls.Add(this.bttParentesisCerrar);
@@ -276,6 +278,13 @@
             this.bttCalcular.Text = "Calcular";
             this.bttCalcular.UseVisualStyleBackColor = true;
             this.bttCalcular.Click += new System.EventHandler(this.bttCalcular_Click);
+            // 
+            // txtCjA
+            // 
+            this.txtCjA.Location = new System.Drawing.Point(146, 36);
+            this.txtCjA.Name = "txtCjA";
+            this.txtCjA.Size = new System.Drawing.Size(100, 20);
+            this.txtCjA.TabIndex = 23;
             // 
             // Form1
             // 
@@ -315,6 +324,7 @@
         private System.Windows.Forms.Button bttParentesisCerrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bttCalcular;
+        private System.Windows.Forms.TextBox txtCjA;
     }
 }
 

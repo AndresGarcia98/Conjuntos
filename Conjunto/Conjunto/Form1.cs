@@ -46,6 +46,8 @@ namespace Conjunto
                 countConjuntos++;
                 int nElementosA = Convert.ToInt32(txtConjuntoA.Text);
                 llenarConjuntoU(countConjuntos);
+                string txt = "e";
+                txtCjA.Text = txtCjA.Text + txt;
                 Form2 fm = new Form2(nElementosA, 1);
                 fm.Show();
             }
@@ -76,11 +78,19 @@ namespace Conjunto
         }
         public void ingresarElementos(int n, int e)
         {
+            string txt = Convert.ToString(e);
+            if(n + 1 == 4)
+            {
+                HashSet<int> cjA= new HashSet<int>(conjuntoA);
+                HashSet<int> cjB = new HashSet<int>(conjuntoB);
+                HashSet<int> cjC = new HashSet<int>(conjuntoC);
+            }
             switch(n)
             {
                 case 1:
                     conjuntoA.Add(e);
-                break;
+                    txtCjA.Text = txtCjA.Text +"," + txt;
+                    break;
 
                 case 2:
                     conjuntoB.Add(e);
