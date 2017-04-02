@@ -225,7 +225,7 @@ namespace Conjunto
                 }
                 else if(aux == count)
                 {
-
+                    //Importaante
                 }
                 else
                 {
