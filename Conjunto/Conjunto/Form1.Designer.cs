@@ -50,6 +50,8 @@
             this.bttParentesisCerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttCalcular = new System.Windows.Forms.Button();
+            this.bttMostarA = new System.Windows.Forms.Button();
+            this.txtMostrarA = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -240,6 +242,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMostrarA);
+            this.groupBox1.Controls.Add(this.bttMostarA);
             this.groupBox1.Controls.Add(this.bttCalcular);
             this.groupBox1.Controls.Add(this.txtConjuntoB);
             this.groupBox1.Controls.Add(this.bttParentesisCerrar);
@@ -276,6 +280,23 @@
             this.bttCalcular.Text = "Calcular";
             this.bttCalcular.UseVisualStyleBackColor = true;
             this.bttCalcular.Click += new System.EventHandler(this.bttCalcular_Click);
+            // 
+            // bttMostarA
+            // 
+            this.bttMostarA.Location = new System.Drawing.Point(225, 59);
+            this.bttMostarA.Name = "bttMostarA";
+            this.bttMostarA.Size = new System.Drawing.Size(75, 23);
+            this.bttMostarA.TabIndex = 22;
+            this.bttMostarA.Text = "Mostar";
+            this.bttMostarA.UseVisualStyleBackColor = true;
+            this.bttMostarA.Click += new System.EventHandler(this.bttMostarA_Click);
+            // 
+            // txtMostrarA
+            // 
+            this.txtMostrarA.Location = new System.Drawing.Point(212, 33);
+            this.txtMostrarA.Name = "txtMostrarA";
+            this.txtMostrarA.Size = new System.Drawing.Size(100, 20);
+            this.txtMostrarA.TabIndex = 23;
             // 
             // Form1
             // 
@@ -315,6 +336,8 @@
         private System.Windows.Forms.Button bttParentesisCerrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bttCalcular;
+        private System.Windows.Forms.TextBox txtMostrarA;
+        private System.Windows.Forms.Button bttMostarA;
     }
 }
 
