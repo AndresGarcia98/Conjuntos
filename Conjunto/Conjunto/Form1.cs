@@ -78,7 +78,6 @@ namespace Conjunto
         }
         public void ingresarElementos(int n, int e)
         {
-            string txt = Convert.ToString(e);
             if(n + 1 == 4)
             {
                 HashSet<int> cjA= new HashSet<int>(conjuntoA);
@@ -89,7 +88,6 @@ namespace Conjunto
             {
                 case 1:
                     conjuntoA.Add(e);
-                    txtCjA.Text = txtCjA.Text +"," + txt;
                     break;
 
                 case 2:
