@@ -25,12 +25,6 @@ namespace Conjunto
         public static List<string> unionAC = new List<string>();
 
 
-        private int countConjuntos;
-        public int CountConjuntos
-        {
-            get { return countConjuntos; }
-        }
-
         private int count;
 
         public int Count
@@ -38,11 +32,6 @@ namespace Conjunto
             get { return count; }
         }
 
-        private int aux;
-        public int Aux
-        {
-            get { return aux; }
-        }
         public Form1()
         {
             InitializeComponent();
