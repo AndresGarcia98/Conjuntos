@@ -49,6 +49,10 @@
             this.txtParentisisAbrir = new System.Windows.Forms.Button();
             this.bttParentesisCerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bttAgregar = new System.Windows.Forms.Button();
+            this.txtAgregarAU = new System.Windows.Forms.TextBox();
+            this.txtConjuntoU = new System.Windows.Forms.TextBox();
+            this.lbConjuntoU = new System.Windows.Forms.Label();
             this.txtMostrarC = new System.Windows.Forms.TextBox();
             this.txtMostrarB = new System.Windows.Forms.TextBox();
             this.txtMostrarA = new System.Windows.Forms.TextBox();
@@ -56,10 +60,6 @@
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
             this.bttCalcular = new System.Windows.Forms.Button();
-            this.txtConjuntoU = new System.Windows.Forms.TextBox();
-            this.lbConjuntoU = new System.Windows.Forms.Label();
-            this.txtAgregarAU = new System.Windows.Forms.TextBox();
-            this.bttAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -287,6 +287,39 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             // 
+            // bttAgregar
+            // 
+            this.bttAgregar.Location = new System.Drawing.Point(123, 388);
+            this.bttAgregar.Name = "bttAgregar";
+            this.bttAgregar.Size = new System.Drawing.Size(69, 20);
+            this.bttAgregar.TabIndex = 31;
+            this.bttAgregar.Text = "Agregar a U";
+            this.bttAgregar.UseVisualStyleBackColor = true;
+            // 
+            // txtAgregarAU
+            // 
+            this.txtAgregarAU.Location = new System.Drawing.Point(78, 388);
+            this.txtAgregarAU.Name = "txtAgregarAU";
+            this.txtAgregarAU.Size = new System.Drawing.Size(39, 20);
+            this.txtAgregarAU.TabIndex = 30;
+            // 
+            // txtConjuntoU
+            // 
+            this.txtConjuntoU.Location = new System.Drawing.Point(78, 362);
+            this.txtConjuntoU.Name = "txtConjuntoU";
+            this.txtConjuntoU.ReadOnly = true;
+            this.txtConjuntoU.Size = new System.Drawing.Size(100, 20);
+            this.txtConjuntoU.TabIndex = 29;
+            // 
+            // lbConjuntoU
+            // 
+            this.lbConjuntoU.AutoSize = true;
+            this.lbConjuntoU.Location = new System.Drawing.Point(6, 362);
+            this.lbConjuntoU.Name = "lbConjuntoU";
+            this.lbConjuntoU.Size = new System.Drawing.Size(65, 13);
+            this.lbConjuntoU.TabIndex = 28;
+            this.lbConjuntoU.Text = "Conjunto C: ";
+            // 
             // txtMostrarC
             // 
             this.txtMostrarC.Location = new System.Drawing.Point(78, 326);
@@ -346,40 +379,7 @@
             this.bttCalcular.TabIndex = 21;
             this.bttCalcular.Text = "Calcular";
             this.bttCalcular.UseVisualStyleBackColor = true;
-            // 
-            // txtConjuntoU
-            // 
-            this.txtConjuntoU.Location = new System.Drawing.Point(78, 362);
-            this.txtConjuntoU.Name = "txtConjuntoU";
-            this.txtConjuntoU.ReadOnly = true;
-            this.txtConjuntoU.Size = new System.Drawing.Size(100, 20);
-            this.txtConjuntoU.TabIndex = 29;
-            // 
-            // lbConjuntoU
-            // 
-            this.lbConjuntoU.AutoSize = true;
-            this.lbConjuntoU.Location = new System.Drawing.Point(6, 362);
-            this.lbConjuntoU.Name = "lbConjuntoU";
-            this.lbConjuntoU.Size = new System.Drawing.Size(65, 13);
-            this.lbConjuntoU.TabIndex = 28;
-            this.lbConjuntoU.Text = "Conjunto C: ";
-            // 
-            // txtAgregarAU
-            // 
-            this.txtAgregarAU.Location = new System.Drawing.Point(78, 388);
-            this.txtAgregarAU.Name = "txtAgregarAU";
-            this.txtAgregarAU.ReadOnly = true;
-            this.txtAgregarAU.Size = new System.Drawing.Size(39, 20);
-            this.txtAgregarAU.TabIndex = 30;
-            // 
-            // bttAgregar
-            // 
-            this.bttAgregar.Location = new System.Drawing.Point(123, 388);
-            this.bttAgregar.Name = "bttAgregar";
-            this.bttAgregar.Size = new System.Drawing.Size(69, 20);
-            this.bttAgregar.TabIndex = 31;
-            this.bttAgregar.Text = "Agregar a U";
-            this.bttAgregar.UseVisualStyleBackColor = true;
+            this.bttCalcular.Click += new System.EventHandler(this.bttCalcular_Click);
             // 
             // Form1
             // 

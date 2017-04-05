@@ -24,6 +24,8 @@ namespace Conjunto
         public static List<string> unionBC = new List<string>();
         public static List<string> unionAC = new List<string>();
 
+        public static List<string> diferencaAB = new List<string>();
+
 
         private int count;
 
@@ -83,7 +85,16 @@ namespace Conjunto
             }
         }
 
-      public void llenarConjuntoU(string e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!txtAgregarAU.Text.Equals(""))
+            {
+                string u = txtAgregarAU.Text;
+                llenarConjuntoU(u);
+            }
+        }
+
+        public void llenarConjuntoU(string e)
         {
             if (!conjuntoU.Contains(e))
             {
@@ -135,6 +146,33 @@ namespace Conjunto
                         {
                             unionBC.Add(conjuntoC[k]);
                         }
+
+                        if(!unionAB.Contains(conjuntoC[k]))
+                        {
+                            unionABC.Add(conjuntoC[k]);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void llenarDiferencia()
+        {
+            diferencaAB = conjuntoA;
+            for (int i = 0; i < conjuntoA.Count; i++)
+            {
+                
+                for (int j = 0; j < conjuntoB.Count; j++)
+                {
+                    if (diferencaAB.Contains(conjuntoB[j]))
+                    {
+                        txtOperaciones.Text = txtOperaciones.Text + conjuntoB[j];
+                        diferencaAB.Remove(conjuntoB[j]);
+                    }
+
+                    for (int k = 0; k < conjuntoC.Count; k++)
+                    {
+                        
                     }
                 }
             }
@@ -202,13 +240,9 @@ namespace Conjunto
             txtOperaciones.Text = txtOperaciones.Text + parentesis;
         }
 
-       /* private void button1_Click(object sender, EventArgs e)
+        private void bttCalcular_Click(object sender, EventArgs e)
         {
-            if (!txtAgregarAU.Text.Equals(""))
-            {
-                string u = txtAgregarAU.Text;
-                llenarConjuntoU(u);
-            }
-        }*/
+            llenarDiferencia();
+        }
     }
 }
