@@ -37,18 +37,10 @@
             this.bttGuardarA = new System.Windows.Forms.Button();
             this.bttGuardarB = new System.Windows.Forms.Button();
             this.bttGuardarC = new System.Windows.Forms.Button();
-            this.bttA = new System.Windows.Forms.Button();
-            this.bttC = new System.Windows.Forms.Button();
-            this.bttB = new System.Windows.Forms.Button();
+            this.txt1Operacion = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtOperaciones = new System.Windows.Forms.TextBox();
-            this.bttInterseccion = new System.Windows.Forms.Button();
-            this.bttUnion = new System.Windows.Forms.Button();
-            this.bttDirecenciaSimetrica = new System.Windows.Forms.Button();
-            this.bttDiferencia = new System.Windows.Forms.Button();
-            this.txtComplemento = new System.Windows.Forms.Button();
-            this.txtParentisisAbrir = new System.Windows.Forms.Button();
-            this.bttParentesisCerrar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bttAgregar = new System.Windows.Forms.Button();
             this.txtAgregarAU = new System.Windows.Forms.TextBox();
             this.txtConjuntoU = new System.Windows.Forms.TextBox();
@@ -59,14 +51,14 @@
             this.lbCjC = new System.Windows.Forms.Label();
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
-            this.bttCalcular = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt1Operacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbConjuntoA
             // 
             this.lbConjuntoA.AutoSize = true;
-            this.lbConjuntoA.Location = new System.Drawing.Point(19, 16);
+            this.lbConjuntoA.Location = new System.Drawing.Point(6, 16);
             this.lbConjuntoA.Name = "lbConjuntoA";
             this.lbConjuntoA.Size = new System.Drawing.Size(252, 13);
             this.lbConjuntoA.TabIndex = 0;
@@ -75,7 +67,7 @@
             // lbConjuntoB
             // 
             this.lbConjuntoB.AutoSize = true;
-            this.lbConjuntoB.Location = new System.Drawing.Point(6, 122);
+            this.lbConjuntoB.Location = new System.Drawing.Point(6, 117);
             this.lbConjuntoB.Name = "lbConjuntoB";
             this.lbConjuntoB.Size = new System.Drawing.Size(252, 13);
             this.lbConjuntoB.TabIndex = 1;
@@ -84,7 +76,7 @@
             // lbConjuntoC
             // 
             this.lbConjuntoC.AutoSize = true;
-            this.lbConjuntoC.Location = new System.Drawing.Point(19, 245);
+            this.lbConjuntoC.Location = new System.Drawing.Point(6, 219);
             this.lbConjuntoC.Name = "lbConjuntoC";
             this.lbConjuntoC.Size = new System.Drawing.Size(252, 13);
             this.lbConjuntoC.TabIndex = 2;
@@ -92,28 +84,28 @@
             // 
             // txtConjuntoA
             // 
-            this.txtConjuntoA.Location = new System.Drawing.Point(75, 36);
+            this.txtConjuntoA.Location = new System.Drawing.Point(62, 32);
             this.txtConjuntoA.Name = "txtConjuntoA";
             this.txtConjuntoA.Size = new System.Drawing.Size(45, 20);
             this.txtConjuntoA.TabIndex = 3;
             // 
             // txtConjuntoB
             // 
-            this.txtConjuntoB.Location = new System.Drawing.Point(62, 138);
+            this.txtConjuntoB.Location = new System.Drawing.Point(62, 133);
             this.txtConjuntoB.Name = "txtConjuntoB";
             this.txtConjuntoB.Size = new System.Drawing.Size(45, 20);
             this.txtConjuntoB.TabIndex = 4;
             // 
             // txtConjuntoC
             // 
-            this.txtConjuntoC.Location = new System.Drawing.Point(75, 261);
+            this.txtConjuntoC.Location = new System.Drawing.Point(62, 235);
             this.txtConjuntoC.Name = "txtConjuntoC";
             this.txtConjuntoC.Size = new System.Drawing.Size(45, 20);
             this.txtConjuntoC.TabIndex = 5;
             // 
             // bttGuardarA
             // 
-            this.bttGuardarA.Location = new System.Drawing.Point(63, 62);
+            this.bttGuardarA.Location = new System.Drawing.Point(51, 58);
             this.bttGuardarA.Name = "bttGuardarA";
             this.bttGuardarA.Size = new System.Drawing.Size(69, 20);
             this.bttGuardarA.TabIndex = 6;
@@ -123,7 +115,7 @@
             // 
             // bttGuardarB
             // 
-            this.bttGuardarB.Location = new System.Drawing.Point(50, 164);
+            this.bttGuardarB.Location = new System.Drawing.Point(51, 159);
             this.bttGuardarB.Name = "bttGuardarB";
             this.bttGuardarB.Size = new System.Drawing.Size(69, 20);
             this.bttGuardarB.TabIndex = 7;
@@ -133,7 +125,7 @@
             // 
             // bttGuardarC
             // 
-            this.bttGuardarC.Location = new System.Drawing.Point(63, 287);
+            this.bttGuardarC.Location = new System.Drawing.Point(51, 261);
             this.bttGuardarC.Name = "bttGuardarC";
             this.bttGuardarC.Size = new System.Drawing.Size(69, 20);
             this.bttGuardarC.TabIndex = 8;
@@ -141,213 +133,126 @@
             this.bttGuardarC.UseVisualStyleBackColor = true;
             this.bttGuardarC.Click += new System.EventHandler(this.bttGuardarC_Click);
             // 
-            // bttA
+            // txt1Operacion
             // 
-            this.bttA.Location = new System.Drawing.Point(10, 487);
-            this.bttA.Name = "bttA";
-            this.bttA.Size = new System.Drawing.Size(21, 23);
-            this.bttA.TabIndex = 9;
-            this.bttA.Text = "A";
-            this.bttA.UseVisualStyleBackColor = true;
-            this.bttA.Click += new System.EventHandler(this.bttA_Click);
+            this.txt1Operacion.Controls.Add(this.label1);
+            this.txt1Operacion.Controls.Add(this.button2);
+            this.txt1Operacion.Controls.Add(this.button1);
+            this.txt1Operacion.Controls.Add(this.txtOperaciones);
+            this.txt1Operacion.Controls.Add(this.bttAgregar);
+            this.txt1Operacion.Controls.Add(this.txtAgregarAU);
+            this.txt1Operacion.Controls.Add(this.txtConjuntoU);
+            this.txt1Operacion.Controls.Add(this.lbConjuntoU);
+            this.txt1Operacion.Controls.Add(this.txtMostrarC);
+            this.txt1Operacion.Controls.Add(this.txtMostrarB);
+            this.txt1Operacion.Controls.Add(this.txtMostrarA);
+            this.txt1Operacion.Controls.Add(this.lbCjC);
+            this.txt1Operacion.Controls.Add(this.lbCjB);
+            this.txt1Operacion.Controls.Add(this.lbCjA);
+            this.txt1Operacion.Controls.Add(this.txtConjuntoB);
+            this.txt1Operacion.Controls.Add(this.bttGuardarB);
+            this.txt1Operacion.Controls.Add(this.bttGuardarC);
+            this.txt1Operacion.Controls.Add(this.lbConjuntoA);
+            this.txt1Operacion.Controls.Add(this.bttGuardarA);
+            this.txt1Operacion.Controls.Add(this.txtConjuntoC);
+            this.txt1Operacion.Controls.Add(this.lbConjuntoB);
+            this.txt1Operacion.Controls.Add(this.txtConjuntoA);
+            this.txt1Operacion.Controls.Add(this.lbConjuntoC);
+            this.txt1Operacion.Location = new System.Drawing.Point(12, 12);
+            this.txt1Operacion.Name = "txt1Operacion";
+            this.txt1Operacion.Size = new System.Drawing.Size(473, 589);
+            this.txt1Operacion.TabIndex = 21;
+            this.txt1Operacion.TabStop = false;
             // 
-            // bttC
+            // button2
             // 
-            this.bttC.Location = new System.Drawing.Point(10, 545);
-            this.bttC.Name = "bttC";
-            this.bttC.Size = new System.Drawing.Size(21, 23);
-            this.bttC.TabIndex = 10;
-            this.bttC.Text = "C";
-            this.bttC.UseVisualStyleBackColor = true;
-            this.bttC.Click += new System.EventHandler(this.bttC_Click);
+            this.button2.Location = new System.Drawing.Point(84, 390);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 47);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Termine de llenar los Conjuntos";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // bttB
+            // button1
             // 
-            this.bttB.Location = new System.Drawing.Point(10, 516);
-            this.bttB.Name = "bttB";
-            this.bttB.Size = new System.Drawing.Size(21, 23);
-            this.bttB.TabIndex = 11;
-            this.bttB.Text = "B";
-            this.bttB.UseVisualStyleBackColor = true;
-            this.bttB.Click += new System.EventHandler(this.bttB_Click);
+            this.button1.Location = new System.Drawing.Point(0, 486);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 20);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "(AUB)\'-C";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtOperaciones
             // 
-            this.txtOperaciones.Location = new System.Drawing.Point(10, 461);
+            this.txtOperaciones.Location = new System.Drawing.Point(6, 563);
             this.txtOperaciones.Name = "txtOperaciones";
-            this.txtOperaciones.Size = new System.Drawing.Size(224, 20);
-            this.txtOperaciones.TabIndex = 12;
-            // 
-            // bttInterseccion
-            // 
-            this.bttInterseccion.Location = new System.Drawing.Point(51, 516);
-            this.bttInterseccion.Name = "bttInterseccion";
-            this.bttInterseccion.Size = new System.Drawing.Size(81, 23);
-            this.bttInterseccion.TabIndex = 13;
-            this.bttInterseccion.Text = "Intersección";
-            this.bttInterseccion.UseVisualStyleBackColor = true;
-            this.bttInterseccion.Click += new System.EventHandler(this.bttIntersepcion_Click);
-            // 
-            // bttUnion
-            // 
-            this.bttUnion.Location = new System.Drawing.Point(51, 487);
-            this.bttUnion.Name = "bttUnion";
-            this.bttUnion.Size = new System.Drawing.Size(81, 23);
-            this.bttUnion.TabIndex = 14;
-            this.bttUnion.Text = "Union";
-            this.bttUnion.UseVisualStyleBackColor = true;
-            this.bttUnion.Click += new System.EventHandler(this.bttUnion_Click);
-            // 
-            // bttDirecenciaSimetrica
-            // 
-            this.bttDirecenciaSimetrica.Location = new System.Drawing.Point(51, 545);
-            this.bttDirecenciaSimetrica.Name = "bttDirecenciaSimetrica";
-            this.bttDirecenciaSimetrica.Size = new System.Drawing.Size(81, 36);
-            this.bttDirecenciaSimetrica.TabIndex = 15;
-            this.bttDirecenciaSimetrica.Text = "Diferencia Simetria";
-            this.bttDirecenciaSimetrica.UseVisualStyleBackColor = true;
-            this.bttDirecenciaSimetrica.Click += new System.EventHandler(this.bttDirecenciaSimetrica_Click);
-            // 
-            // bttDiferencia
-            // 
-            this.bttDiferencia.Location = new System.Drawing.Point(153, 487);
-            this.bttDiferencia.Name = "bttDiferencia";
-            this.bttDiferencia.Size = new System.Drawing.Size(81, 23);
-            this.bttDiferencia.TabIndex = 16;
-            this.bttDiferencia.Text = "Diferencia";
-            this.bttDiferencia.UseVisualStyleBackColor = true;
-            this.bttDiferencia.Click += new System.EventHandler(this.bttDiferencia_Click);
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(153, 516);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(81, 23);
-            this.txtComplemento.TabIndex = 17;
-            this.txtComplemento.Text = "Complemento";
-            this.txtComplemento.UseVisualStyleBackColor = true;
-            this.txtComplemento.Click += new System.EventHandler(this.txtComplemento_Click);
-            // 
-            // txtParentisisAbrir
-            // 
-            this.txtParentisisAbrir.Location = new System.Drawing.Point(153, 545);
-            this.txtParentisisAbrir.Name = "txtParentisisAbrir";
-            this.txtParentisisAbrir.Size = new System.Drawing.Size(21, 23);
-            this.txtParentisisAbrir.TabIndex = 19;
-            this.txtParentisisAbrir.Text = "(";
-            this.txtParentisisAbrir.UseVisualStyleBackColor = true;
-            this.txtParentisisAbrir.Click += new System.EventHandler(this.txtParentisisAbrir_Click);
-            // 
-            // bttParentesisCerrar
-            // 
-            this.bttParentesisCerrar.Location = new System.Drawing.Point(213, 545);
-            this.bttParentesisCerrar.Name = "bttParentesisCerrar";
-            this.bttParentesisCerrar.Size = new System.Drawing.Size(21, 23);
-            this.bttParentesisCerrar.TabIndex = 20;
-            this.bttParentesisCerrar.Text = ")";
-            this.bttParentesisCerrar.UseVisualStyleBackColor = true;
-            this.bttParentesisCerrar.Click += new System.EventHandler(this.bttParentesisCerrar_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.bttAgregar);
-            this.groupBox1.Controls.Add(this.txtAgregarAU);
-            this.groupBox1.Controls.Add(this.txtConjuntoU);
-            this.groupBox1.Controls.Add(this.lbConjuntoU);
-            this.groupBox1.Controls.Add(this.txtMostrarC);
-            this.groupBox1.Controls.Add(this.txtMostrarB);
-            this.groupBox1.Controls.Add(this.txtMostrarA);
-            this.groupBox1.Controls.Add(this.lbCjC);
-            this.groupBox1.Controls.Add(this.lbCjB);
-            this.groupBox1.Controls.Add(this.lbCjA);
-            this.groupBox1.Controls.Add(this.bttCalcular);
-            this.groupBox1.Controls.Add(this.txtConjuntoB);
-            this.groupBox1.Controls.Add(this.bttParentesisCerrar);
-            this.groupBox1.Controls.Add(this.bttGuardarB);
-            this.groupBox1.Controls.Add(this.txtParentisisAbrir);
-            this.groupBox1.Controls.Add(this.bttGuardarC);
-            this.groupBox1.Controls.Add(this.lbConjuntoA);
-            this.groupBox1.Controls.Add(this.txtComplemento);
-            this.groupBox1.Controls.Add(this.bttGuardarA);
-            this.groupBox1.Controls.Add(this.bttDiferencia);
-            this.groupBox1.Controls.Add(this.txtConjuntoC);
-            this.groupBox1.Controls.Add(this.bttDirecenciaSimetrica);
-            this.groupBox1.Controls.Add(this.lbConjuntoB);
-            this.groupBox1.Controls.Add(this.bttUnion);
-            this.groupBox1.Controls.Add(this.txtConjuntoA);
-            this.groupBox1.Controls.Add(this.bttInterseccion);
-            this.groupBox1.Controls.Add(this.txtOperaciones);
-            this.groupBox1.Controls.Add(this.lbConjuntoC);
-            this.groupBox1.Controls.Add(this.bttB);
-            this.groupBox1.Controls.Add(this.bttA);
-            this.groupBox1.Controls.Add(this.bttC);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(358, 589);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
+            this.txtOperaciones.Size = new System.Drawing.Size(159, 20);
+            this.txtOperaciones.TabIndex = 32;
             // 
             // bttAgregar
             // 
-            this.bttAgregar.Location = new System.Drawing.Point(123, 388);
+            this.bttAgregar.Location = new System.Drawing.Point(123, 364);
             this.bttAgregar.Name = "bttAgregar";
-            this.bttAgregar.Size = new System.Drawing.Size(69, 20);
+            this.bttAgregar.Size = new System.Drawing.Size(94, 20);
             this.bttAgregar.TabIndex = 31;
             this.bttAgregar.Text = "Agregar a U";
             this.bttAgregar.UseVisualStyleBackColor = true;
+            this.bttAgregar.Click += new System.EventHandler(this.bttAgregar_Click);
             // 
             // txtAgregarAU
             // 
-            this.txtAgregarAU.Location = new System.Drawing.Point(78, 388);
+            this.txtAgregarAU.Location = new System.Drawing.Point(71, 364);
             this.txtAgregarAU.Name = "txtAgregarAU";
-            this.txtAgregarAU.Size = new System.Drawing.Size(39, 20);
+            this.txtAgregarAU.Size = new System.Drawing.Size(49, 20);
             this.txtAgregarAU.TabIndex = 30;
             // 
             // txtConjuntoU
             // 
-            this.txtConjuntoU.Location = new System.Drawing.Point(78, 362);
+            this.txtConjuntoU.Location = new System.Drawing.Point(71, 338);
             this.txtConjuntoU.Name = "txtConjuntoU";
             this.txtConjuntoU.ReadOnly = true;
-            this.txtConjuntoU.Size = new System.Drawing.Size(100, 20);
+            this.txtConjuntoU.Size = new System.Drawing.Size(146, 20);
             this.txtConjuntoU.TabIndex = 29;
             // 
             // lbConjuntoU
             // 
             this.lbConjuntoU.AutoSize = true;
-            this.lbConjuntoU.Location = new System.Drawing.Point(6, 362);
+            this.lbConjuntoU.Location = new System.Drawing.Point(0, 338);
             this.lbConjuntoU.Name = "lbConjuntoU";
-            this.lbConjuntoU.Size = new System.Drawing.Size(65, 13);
+            this.lbConjuntoU.Size = new System.Drawing.Size(66, 13);
             this.lbConjuntoU.TabIndex = 28;
-            this.lbConjuntoU.Text = "Conjunto C: ";
+            this.lbConjuntoU.Text = "Conjunto U: ";
             // 
             // txtMostrarC
             // 
-            this.txtMostrarC.Location = new System.Drawing.Point(78, 326);
+            this.txtMostrarC.Location = new System.Drawing.Point(71, 295);
             this.txtMostrarC.Name = "txtMostrarC";
             this.txtMostrarC.ReadOnly = true;
-            this.txtMostrarC.Size = new System.Drawing.Size(100, 20);
+            this.txtMostrarC.Size = new System.Drawing.Size(146, 20);
             this.txtMostrarC.TabIndex = 27;
             // 
             // txtMostrarB
             // 
-            this.txtMostrarB.Location = new System.Drawing.Point(74, 196);
+            this.txtMostrarB.Location = new System.Drawing.Point(71, 196);
             this.txtMostrarB.Name = "txtMostrarB";
             this.txtMostrarB.ReadOnly = true;
-            this.txtMostrarB.Size = new System.Drawing.Size(100, 20);
+            this.txtMostrarB.Size = new System.Drawing.Size(146, 20);
             this.txtMostrarB.TabIndex = 26;
             // 
             // txtMostrarA
             // 
-            this.txtMostrarA.Location = new System.Drawing.Point(78, 94);
+            this.txtMostrarA.Location = new System.Drawing.Point(71, 94);
             this.txtMostrarA.Name = "txtMostrarA";
             this.txtMostrarA.ReadOnly = true;
-            this.txtMostrarA.Size = new System.Drawing.Size(100, 20);
+            this.txtMostrarA.Size = new System.Drawing.Size(146, 20);
             this.txtMostrarA.TabIndex = 25;
             // 
             // lbCjC
             // 
             this.lbCjC.AutoSize = true;
-            this.lbCjC.Location = new System.Drawing.Point(6, 326);
+            this.lbCjC.Location = new System.Drawing.Point(0, 295);
             this.lbCjC.Name = "lbCjC";
             this.lbCjC.Size = new System.Drawing.Size(65, 13);
             this.lbCjC.TabIndex = 24;
@@ -356,7 +261,7 @@
             // lbCjB
             // 
             this.lbCjB.AutoSize = true;
-            this.lbCjB.Location = new System.Drawing.Point(6, 196);
+            this.lbCjB.Location = new System.Drawing.Point(0, 196);
             this.lbCjB.Name = "lbCjB";
             this.lbCjB.Size = new System.Drawing.Size(65, 13);
             this.lbCjB.TabIndex = 23;
@@ -365,32 +270,32 @@
             // lbCjA
             // 
             this.lbCjA.AutoSize = true;
-            this.lbCjA.Location = new System.Drawing.Point(6, 94);
+            this.lbCjA.Location = new System.Drawing.Point(0, 94);
             this.lbCjA.Name = "lbCjA";
             this.lbCjA.Size = new System.Drawing.Size(65, 13);
             this.lbCjA.TabIndex = 22;
             this.lbCjA.Text = "Conjunto A: ";
             // 
-            // bttCalcular
+            // label1
             // 
-            this.bttCalcular.Location = new System.Drawing.Point(240, 461);
-            this.bttCalcular.Name = "bttCalcular";
-            this.bttCalcular.Size = new System.Drawing.Size(73, 23);
-            this.bttCalcular.TabIndex = 21;
-            this.bttCalcular.Text = "Calcular";
-            this.bttCalcular.UseVisualStyleBackColor = true;
-            this.bttCalcular.Click += new System.EventHandler(this.bttCalcular_Click);
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(245, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = " \"vacio\" si el desea algun conjunto vacio";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 613);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txt1Operacion);
             this.Name = "Form1";
             this.Text = "Conjuntos";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.txt1Operacion.ResumeLayout(false);
+            this.txt1Operacion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -406,19 +311,7 @@
         private System.Windows.Forms.Button bttGuardarA;
         private System.Windows.Forms.Button bttGuardarB;
         private System.Windows.Forms.Button bttGuardarC;
-        private System.Windows.Forms.Button bttA;
-        private System.Windows.Forms.Button bttC;
-        private System.Windows.Forms.Button bttB;
-        private System.Windows.Forms.TextBox txtOperaciones;
-        private System.Windows.Forms.Button bttInterseccion;
-        private System.Windows.Forms.Button bttUnion;
-        private System.Windows.Forms.Button bttDirecenciaSimetrica;
-        private System.Windows.Forms.Button bttDiferencia;
-        private System.Windows.Forms.Button txtComplemento;
-        private System.Windows.Forms.Button txtParentisisAbrir;
-        private System.Windows.Forms.Button bttParentesisCerrar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button bttCalcular;
+        private System.Windows.Forms.GroupBox txt1Operacion;
         private System.Windows.Forms.TextBox txtMostrarC;
         private System.Windows.Forms.TextBox txtMostrarB;
         private System.Windows.Forms.TextBox txtMostrarA;
@@ -429,6 +322,10 @@
         private System.Windows.Forms.TextBox txtAgregarAU;
         private System.Windows.Forms.TextBox txtConjuntoU;
         private System.Windows.Forms.Label lbConjuntoU;
+        private System.Windows.Forms.TextBox txtOperaciones;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

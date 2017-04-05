@@ -12,27 +12,35 @@ namespace Conjunto
 {
     public partial class Form1 : Form
     {
-        public static List<string> conjuntoA = new List<string>();
-        public static List<string> conjuntoB = new List<string>();
-        public static List<string> conjuntoC = new List<string>();
+        List<string> conjuntoA = new List<string>();
+        List<string> conjuntoB = new List<string>();
+        List<string> conjuntoC = new List<string>();
         List<string> conjuntoU = new List<string>();
 
-        public static List<string> interseccionABC = new List<string>();
+        List<string> interseccionAB = new List<string>();
+        List<string> interseccionAC = new List<string>();
+        List<string> interseccionBC = new List<string>();
+        List<string> interseccionABC = new List<string>();
 
-        public static List<string> unionABC = new List<string>();
-        public static List<string> unionAB = new List<string>();
-        public static List<string> unionBC = new List<string>();
-        public static List<string> unionAC = new List<string>();
+        List<string> unionABC = new List<string>();
+        List<string> unionAB = new List<string>();
+        List<string> unionBC = new List<string>();
+        List<string> unionAC = new List<string>();
 
-        public static List<string> diferencaAB = new List<string>();
+        List<string> diferencaAB = new List<string>();
+        List<string> diferencaAC = new List<string>();
+        List<string> diferencaBA = new List<string>();
+        List<string> diferencaBC = new List<string>();
+        List<string> diferencaCA = new List<string>();
+        List<string> diferencaCB = new List<string>();
+        List<string> diferencaABC = new List<string>();
 
 
-        private int count;
+        List<string> complemento = new List<string>();
+        List<string> operacion = new List<string>();
 
-        public int Count
-        {
-            get { return count; }
-        }
+
+        private int countA, countB, countC;
 
         public Form1()
         {
@@ -41,13 +49,18 @@ namespace Conjunto
 
         private void bttGuardarA_Click(object sender, EventArgs e)
         {
-            if (!txtConjuntoA.Text.Equals(""))
+            if (!txtConjuntoA.Text.Equals("") && !txtAgregarAU.Equals("vacio"))
             {
                 string A = txtConjuntoA.Text;
                 if (!conjuntoA.Contains(A))
                 {
                     conjuntoA.Add(A);
                     txtMostrarA.Text = txtMostrarA.Text + A + ",";
+                    countA++;
+                    if (A == "vacio" && countA == 1)
+                    {
+                        txtConjuntoA.ReadOnly = true;
+                    }
                 }
                 llenarConjuntoU(A);
                 txtConjuntoA.Text = "";
@@ -56,13 +69,18 @@ namespace Conjunto
 
         private void bttGuardarB_Click(object sender, EventArgs e)
         {
-            if (!txtConjuntoB.Text.Equals(""))
+            if (!txtConjuntoB.Text.Equals("") && !txtAgregarAU.Equals("vacio"))
             {
                 string B = txtConjuntoB.Text;
                 if (!conjuntoB.Contains(B))
                 {
                     conjuntoA.Add(B);
                     txtMostrarB.Text = txtMostrarB.Text + B + ",";
+                    countB++;
+                    if(B == "vacio" && countB == 1)
+                    {
+                        txtConjuntoB.ReadOnly = true;
+                    }
                 }
                 llenarConjuntoU(B);
                 txtConjuntoB.Text = "";
@@ -71,35 +89,77 @@ namespace Conjunto
 
         private void bttGuardarC_Click(object sender, EventArgs e)
         {
-            if (!txtConjuntoC.Text.Equals(""))
+            if (!txtConjuntoC.Text.Equals("") && !txtAgregarAU.Equals("vacio"))
             {
                 string C = txtConjuntoC.Text;
                 if (!conjuntoC.Contains(C))
                 {
                     conjuntoA.Add(C);
                     txtMostrarC.Text = txtMostrarC.Text + C + ",";
+                    countC++;
+                    if (C == "vacio" && countC == 1)
+                    {
+                        txtConjuntoC.ReadOnly = true;
+                    }
                 }
                 llenarConjuntoU(C);
-
                 txtConjuntoC.Text = "";
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void bttAgregar_Click(object sender, EventArgs e)
         {
-            if (!txtAgregarAU.Text.Equals(""))
+            if(txtAgregarAU.Text.Equals("vacio"))
+            {
+                txtMostrarA.Text = "vacio";
+                txtConjuntoA.ReadOnly = true;
+
+                txtMostrarB.Text = "vacio";
+                txtConjuntoB.ReadOnly = true;
+
+                txtMostrarC.Text = "vacio";
+                txtConjuntoC.ReadOnly = true;
+
+                txtConjuntoU.Text = "vacio";
+                txtAgregarAU.ReadOnly = true;
+            }
+            else if (!txtAgregarAU.Text.Equals("") && conjuntoA.Count != 0 && conjuntoB.Count != 0 && conjuntoC.Count != 0)
             {
                 string u = txtAgregarAU.Text;
                 llenarConjuntoU(u);
             }
+            txtAgregarAU.Text = "";
         }
-
         public void llenarConjuntoU(string e)
         {
             if (!conjuntoU.Contains(e))
             {
+                if( e != "vacio" && countA != 0 || countB != 0 || countC != 0)
+                {
+                    conjuntoU.Add(e);
+                    txtConjuntoU.Text = txtConjuntoU.Text + "," + e;
+                }
+                else
+                {
+                    conjuntoU.Add(e);
+                    txtConjuntoU.Text = txtConjuntoU.Text + e;
+                }
+            }
+            if(countA ==1 && countB == 1 && countC == 1)
+            {
                 conjuntoU.Add(e);
-                txtConjuntoU.Text = txtConjuntoU.Text + e + ",";
+                txtConjuntoU.Text = txtConjuntoU.Text + e ;
+                txtAgregarAU.ReadOnly = true;
+
+            }
+        }
+
+        public void realizarOperaciones()
+        {
+            if (conjuntoA.Count != 0 && conjuntoB.Count > 0 && conjuntoC.Count > 0)
+            {
+                llenarUnion();
+                llenarInterseccion();
+                llenarDiferencia();
             }
         }
 
@@ -109,32 +169,43 @@ namespace Conjunto
             {
                 for (int j = 0; j < conjuntoB.Count; j++)
                 {
-                    for (int k = 0; k < conjuntoC.Count; k++)
+                    if (conjuntoA.Contains(conjuntoB[j]))
                     {
-                        if (conjuntoA[i] == conjuntoB[j] && conjuntoB[j] == conjuntoC[k])
+                        interseccionAB.Add(conjuntoB[j]);
+                    }
+                    else if (j + 1 == conjuntoB.Count)
+                    {
+                        for (int k = 0; k < conjuntoC.Count; k++)
                         {
-                            interseccionABC.Add(conjuntoA[i]);
+                            if (interseccionAB.Contains(conjuntoC[k]))
+                            {
+                                interseccionABC.Add(conjuntoC[k]);
+                            }
+                            else
+                            {
+                                continue;
+                            }
                         }
                     }
+                    continue;
                 }
+
             }
         }
-
         public void llenarUnion()
         {
-            unionAB = conjuntoA;
-            unionAC = conjuntoA;
-            unionBC = conjuntoB;
+        unionAB = conjuntoA;
+        unionAC = conjuntoA;
+        unionBC = conjuntoB;
 
-            for (int i = 0; i < conjuntoA.Count; i++)
+        for (int i = 0; i < conjuntoA.Count; i++)
+        {
+            for (int j = 0; j < conjuntoB.Count; j++)
             {
-                for (int j = 0; j < conjuntoB.Count; j++)
+                if (!unionAB.Contains(conjuntoB[j]))
                 {
-                    if (!unionAB.Contains(conjuntoB[j]))
-                    {
-                        unionAB.Add(conjuntoB[j]);
-                    }
-
+                    unionAB.Add(conjuntoB[j]);
+                }
                     for (int k = 0; k < conjuntoC.Count; k++)
                     {
                         if (!unionAC.Contains(conjuntoC[k]))
@@ -147,102 +218,93 @@ namespace Conjunto
                             unionBC.Add(conjuntoC[k]);
                         }
 
-                        if(!unionAB.Contains(conjuntoC[k]))
+                        if (!unionAB.Contains(conjuntoC[k]))
                         {
                             unionABC.Add(conjuntoC[k]);
+                        }
+                    }
+                }
+        }
+    }
+
+
+        public void llenarDiferencia()
+        {
+            diferencaAB = conjuntoA;
+            diferencaAC = conjuntoA;
+            diferencaBA = conjuntoB;
+            diferencaBC = conjuntoB;
+            diferencaCA = conjuntoC;
+            diferencaCB = conjuntoC;
+            for (int i = 0; i < conjuntoA.Count; i++)
+            {
+                string a = conjuntoA[i];
+                if (diferencaBA.Contains(a))
+                {
+                    diferencaAB.Remove(a);
+                }
+                if (diferencaCA.Contains(a))
+                {
+                    diferencaCB.Remove(a);
+                }
+                for (int j = 0; j < conjuntoB.Count; j++)
+                {
+                    string b = conjuntoB[j];
+                    if (diferencaAB.Contains(b))
+                    {
+                        diferencaAB.Remove(b);
+                    }
+                    if (diferencaCB.Contains(b))
+                    {
+                        diferencaCB.Remove(b);
+                    }
+                    for (int k = 0; k < conjuntoC.Count; k++)
+                    {
+                        string c = conjuntoC[k];
+                        if (diferencaBC.Contains(c))
+                        {
+                            diferencaAB.Remove(c);
+                        }
+                        if (diferencaAC.Contains(c))
+                        {
+                            diferencaCB.Remove(c);
+                        }
+                    }
+                }
+            }
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            for(int i = 0; i < conjuntoU.Count; i ++)
+            {
+                if (!diferencaAB.Contains(conjuntoU[i]))
+                {
+                    complemento.Add(conjuntoU[i]);
+                    if (i + 1 == conjuntoU.Count)
+                    {
+                        for (int j = 0; j < conjuntoC.Count; j++)
+                        {
+                            if(!complemento.Contains(conjuntoC[j]))
+                            {
+                                operacion.Add(conjuntoC[i]);
+                                txt1Operacion.Text = txt1Operacion.Text + conjuntoC[i];
+                            }
+                            else
+                            {
+                                MessageBox.Show("Si esta");
+                            }
                         }
                     }
                 }
             }
         }
 
-        public void llenarDiferencia()
+        private void button2_Click(object sender, EventArgs e)
         {
-            diferencaAB = conjuntoA;
-            for (int i = 0; i < conjuntoA.Count; i++)
-            {
-                
-                for (int j = 0; j < conjuntoB.Count; j++)
-                {
-                    if (diferencaAB.Contains(conjuntoB[j]))
-                    {
-                        txtOperaciones.Text = txtOperaciones.Text + conjuntoB[j];
-                        diferencaAB.Remove(conjuntoB[j]);
-                    }
-
-                    for (int k = 0; k < conjuntoC.Count; k++)
-                    {
-                        
-                    }
-                }
-            }
-        }
-
-        //codigo que hace que aparezca en el txtOperaciones segun lo que el usaurio presiono en los botones
-        private void bttA_Click(object sender, EventArgs e)
-        {
-            string cjA = "A";
-            txtOperaciones.Text = txtOperaciones.Text + cjA;
-        }
-
-        private void bttB_Click(object sender, EventArgs e)
-        {
-            string cjB = "B";
-            txtOperaciones.Text = txtOperaciones.Text + cjB;
-        }
-
-        private void bttC_Click(object sender, EventArgs e)
-        {
-            string cjC = "C";
-            txtOperaciones.Text = txtOperaciones.Text + cjC;
-        }
-
-        private void bttUnion_Click(object sender, EventArgs e)
-        {
-            string union = "U";
-            txtOperaciones.Text = txtOperaciones.Text + union;
-        }
-
-        private void bttIntersepcion_Click(object sender, EventArgs e)
-        {
-            string interseccion = "";
-            txtOperaciones.Text = txtOperaciones.Text + interseccion;
-        }
-
-        private void bttDirecenciaSimetrica_Click(object sender, EventArgs e)
-        {
-            string dfSimetrica = "A";
-            txtOperaciones.Text = txtOperaciones.Text + dfSimetrica;
-        }
-
-        private void bttDiferencia_Click(object sender, EventArgs e)
-        {
-            string diferencia = "-";
-            txtOperaciones.Text = txtOperaciones.Text + diferencia;
-        }
-
-        private void txtComplemento_Click(object sender, EventArgs e)
-        {
-            string complemento = "'";
-            txtOperaciones.Text = txtOperaciones.Text + complemento;
-        }
-
-        private void txtParentisisAbrir_Click(object sender, EventArgs e)
-        {
-            string parentesis = "(";
-            txtOperaciones.Text = txtOperaciones.Text + parentesis;
-            count++;
-        }
-
-        private void bttParentesisCerrar_Click(object sender, EventArgs e)
-        {
-            string parentesis = ")";
-            txtOperaciones.Text = txtOperaciones.Text + parentesis;
-        }
-
-        private void bttCalcular_Click(object sender, EventArgs e)
-        {
-            llenarDiferencia();
+            realizarOperaciones();
         }
     }
 }
+
+
+
