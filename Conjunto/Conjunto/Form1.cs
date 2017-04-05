@@ -40,7 +40,7 @@ namespace Conjunto
         List<string> operacion = new List<string>();
 
 
-        private int countA, countB, countC;
+        private int countA, countB, countC, aux, aux1;
 
         public Form1()
         {
@@ -133,7 +133,7 @@ namespace Conjunto
         {
             if (!conjuntoU.Contains(e))
             {
-                if( e != "vacio" && countA != 0 || countB != 0 || countC != 0)
+                if( e != "vacio" && countA != 1 && countB != 1 && countC != 1)
                 {
                     conjuntoU.Add(e);
                     txtConjuntoU.Text = txtConjuntoU.Text + "," + e;
@@ -246,7 +246,7 @@ namespace Conjunto
                 {
                     unionAC = conjuntoA;
                     unionBC = conjuntoB;
-                    unionABC = uni;
+                    unionABC = unionAB;
                 }
         }
 
@@ -298,28 +298,37 @@ namespace Conjunto
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            for(int i = 0; i < conjuntoU.Count; i ++)
+            txt1Operacion.Text = "";
+            for (int j = 0; j < diferenciaAB.Count; j++)
             {
-                if (!diferenciaAB.Contains(conjuntoU[i]))
+                if (!conjuntoU.Contains(diferenciaAB[j]))
                 {
-                    complemento.Add(conjuntoU[i]);
-                    if (i + 1 == conjuntoU.Count)
+                    string c = conjuntoU[j];
+                    complemento.Add(c);
+                    aux = j;
+                }
+            }
+            if (aux + 1 == diferenciaAB.Count)
+            {
+                for(int i = 0; i < conjuntoC.Count; i++)
+                {
+                    if(!complemento.Contains(conjuntoC[i]))
                     {
-                        for (int j = 0; j < conjuntoC.Count; j++)
-                        {
-                            if(!complemento.Contains(conjuntoC[j]))
-                            {
-                                operacion.Add(conjuntoC[i]);
-                                txt1Operacion.Text = txt1Operacion.Text + conjuntoC[i];
-                            }
-                            else
-                            {
-                                MessageBox.Show("Si esta");
-                            }
-                        }
+                        string com = conjuntoC[i];
+                        operacion.Add(com);
+                    }
+                    aux1 = i;
+                }
+                if(aux1 + 1 == conjuntoC.Count)
+                {
+                    for(int m = 0, m < operacion.Count; m++)
+                    {
+                        string o = operacion[m];
+                        txt1Operacion.Text = txt1Operacion.Text + o;
                     }
                 }
             }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

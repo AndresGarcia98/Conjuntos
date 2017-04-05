@@ -186,7 +186,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 443);
+            this.button1.Location = new System.Drawing.Point(26, 443);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 20);
             this.button1.TabIndex = 33;
@@ -196,7 +196,7 @@
             // 
             // txtOperaciones
             // 
-            this.txtOperaciones.Location = new System.Drawing.Point(-5, 469);
+            this.txtOperaciones.Location = new System.Drawing.Point(9, 469);
             this.txtOperaciones.Name = "txtOperaciones";
             this.txtOperaciones.Size = new System.Drawing.Size(159, 20);
             this.txtOperaciones.TabIndex = 32;
