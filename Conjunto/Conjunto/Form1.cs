@@ -300,7 +300,7 @@ namespace Conjunto
         {
             for(int i = 0; i < conjuntoU.Count; i ++)
             {
-                if (!diferencaAB.Contains(conjuntoU[i]))
+                if (!diferenciaAB.Contains(conjuntoU[i]))
                 {
                     complemento.Add(conjuntoU[i]);
                     if (i + 1 == conjuntoU.Count)
