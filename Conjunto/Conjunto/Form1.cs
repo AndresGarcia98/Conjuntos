@@ -12,10 +12,18 @@ namespace Conjunto
 {
     public partial class Form1 : Form
     {
-        List<int> conjuntoA = new List<int>();
-        List<int> conjuntoB = new List<int>();
-        List<int> conjuntoC = new List<int>();
-        List<int> conjuntoU = new List<int>();
+        public static List<string> conjuntoA = new List<string>();
+        public static List<string> conjuntoB = new List<string>();
+        public static List<string> conjuntoC = new List<string>();
+        List<string> conjuntoU = new List<string>();
+
+        public static List<string> interseccionABC = new List<string>();
+
+        public static List<string> unionABC = new List<string>();
+        public static List<string> unionAB = new List<string>();
+        public static List<string> unionBC = new List<string>();
+        public static List<string> unionAC = new List<string>();
+
 
         private int countConjuntos;
         public int CountConjuntos
@@ -24,6 +32,7 @@ namespace Conjunto
         }
 
         private int count;
+
         public int Count
         {
             get { return count; }
@@ -41,98 +50,102 @@ namespace Conjunto
 
         private void bttGuardarA_Click(object sender, EventArgs e)
         {
-            if(txtConjuntoA.Text != "")
+            if (!txtConjuntoA.Text.Equals(""))
             {
-                countConjuntos++;
-                int nElementosA = Convert.ToInt32(txtConjuntoA.Text);
-                llenarConjuntoU(countConjuntos);
-                Form2 fm = new Form2(nElementosA, 1);
-                fm.Show();
+                string A = txtConjuntoA.Text;
+                if (!conjuntoA.Contains(A))
+                {
+                    conjuntoA.Add(A);
+                    txtMostrarA.Text = txtMostrarA.Text + A + ",";
+                }
+                llenarConjuntoU(A);
+                txtConjuntoA.Text = "";
             }
         }
 
         private void bttGuardarB_Click(object sender, EventArgs e)
         {
-            if(txtConjuntoB.Text != "")
+            if (!txtConjuntoB.Text.Equals(""))
             {
-                countConjuntos++;
-                int nElementosB = Convert.ToInt32(txtConjuntoB.Text);
-                llenarConjuntoU(countConjuntos);
-                Form2 fm = new Form2(nElementosB, 2);
-                fm.Show();
+                string B = txtConjuntoB.Text;
+                if (!conjuntoB.Contains(B))
+                {
+                    conjuntoA.Add(B);
+                    txtMostrarB.Text = txtMostrarB.Text + B + ",";
+                }
+                llenarConjuntoU(B);
+                txtConjuntoB.Text = "";
             }
         }
 
         private void bttGuardarC_Click(object sender, EventArgs e)
         {
-            if(txtConjuntoC.Text != "")
+            if (!txtConjuntoC.Text.Equals(""))
             {
-                countConjuntos++;
-                int nElementosC = Convert.ToInt32(txtConjuntoC.Text);
-                llenarConjuntoU(countConjuntos);
-                Form2 fm = new Form2(nElementosC, 3);
-                fm.Show();
-            }
-        }
-        public void ingresarElementos(int n, int e)
-        {
-            switch(n)
-            {
-                case 1:
-                    conjuntoA.Add(e);
-                break;
-
-                case 2:
-                    conjuntoB.Add(e);
-                break;
-
-                case 3:
-                    conjuntoC.Add(e);
-                break;
-            }
-        }
-        public void llenarConjuntoU(int count)
-        {
-            if(count == 3)
-            {
-                conjuntoU = conjuntoA;
-                for(int i = 0; i < 2; i++)
+                string C = txtConjuntoC.Text;
+                if (!conjuntoC.Contains(C))
                 {
-                    switch(i + 1)
-                    {
-                        case 1:
-                            for(int j = 0; j < conjuntoU.Count(); j++)
-                            {
-                                for(int h = 0; h < conjuntoB.Count(); h++)
-                                {
-                                    if(conjuntoU[j] != conjuntoB[h])
-                                    {
-                                        conjuntoU.Add(conjuntoB[h]);
-                                    }
-                                    else
-                                    {
-                                        continue;
-                                    }
-                                }
-                            }
-                        break;
+                    conjuntoA.Add(C);
+                    txtMostrarC.Text = txtMostrarC.Text + C + ",";
+                }
+                llenarConjuntoU(C);
 
-                        case 2:
-                            for (int j = 0; j < conjuntoU.Count(); j++)
-                            {
-                                for (int h = 0; h < conjuntoC.Count(); h++)
-                                {
-                                    if (conjuntoU[j] != conjuntoC[h])
-                                    {
-                                        conjuntoU.Add(conjuntoC[h]);
-                                    }
-                                    else
-                                    {
-                                        continue;
-                                    }
-                                }
-                            }
-                        break;
+                txtConjuntoC.Text = "";
+            }
+        }
+
+      public void llenarConjuntoU(string e)
+        {
+            if (!conjuntoU.Contains(e))
+            {
+                conjuntoU.Add(e);
+                txtConjuntoU.Text = txtConjuntoU.Text + e + ",";
+            }
+        }
+
+        public void llenarInterseccion()
+        {
+            for (int i = 0; i < conjuntoA.Count; i++)
+            {
+                for (int j = 0; j < conjuntoB.Count; j++)
+                {
+                    for (int k = 0; k < conjuntoC.Count; k++)
+                    {
+                        if (conjuntoA[i] == conjuntoB[j] && conjuntoB[j] == conjuntoC[k])
+                        {
+                            interseccionABC.Add(conjuntoA[i]);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void llenarUnion()
+        {
+            unionAB = conjuntoA;
+            unionAC = conjuntoA;
+            unionBC = conjuntoB;
+
+            for (int i = 0; i < conjuntoA.Count; i++)
+            {
+                for (int j = 0; j < conjuntoB.Count; j++)
+                {
+                    if (!unionAB.Contains(conjuntoB[j]))
+                    {
+                        unionAB.Add(conjuntoB[j]);
+                    }
+
+                    for (int k = 0; k < conjuntoC.Count; k++)
+                    {
+                        if (!unionAC.Contains(conjuntoC[k]))
+                        {
+                            unionAC.Add(conjuntoC[k]);
+                        }
+
+                        if (!unionBC.Contains(conjuntoC[k]))
+                        {
+                            unionBC.Add(conjuntoC[k]);
+                        }
                     }
                 }
             }
@@ -199,46 +212,14 @@ namespace Conjunto
             string parentesis = ")";
             txtOperaciones.Text = txtOperaciones.Text + parentesis;
         }
-        private void bttCalcular_Click(object sender, EventArgs e)
-        {
-            if(txtOperaciones.Text != "")
-            {
-                calcularOperaciones(txtOperaciones.Text);
-            }
-            else
-            {
-                MessageBox.Show("No puede estar vacio si desea ralizar alguna operación", "Error", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        //Aqui termina.
 
-        public void calcularOperaciones(string operacion)
+       /* private void button1_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < operacion.Length; i++)
+            if (!txtAgregarAU.Text.Equals(""))
             {
-                if(operacion.Equals("("))
-                {
-                    aux++;
-                    continue;
-                }
-                else if(aux == count)
-                {
-                    //Importaante
-                }
-                else
-                {
-                    continue;
-                }
+                string u = txtAgregarAU.Text;
+                llenarConjuntoU(u);
             }
-        }
-
-        private void bttMostarA_Click(object sender, EventArgs e)
-        {
-            foreach(int i in conjuntoA)
-            {
-                txtMostrarA.Text = txtMostrarA.Text +"," +  Convert.ToString(conjuntoA[i]);
-            }
-        }
+        }*/
     }
 }
