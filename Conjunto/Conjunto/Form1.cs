@@ -27,13 +27,13 @@ namespace Conjunto
         List<string> unionBC = new List<string>();
         List<string> unionAC = new List<string>();
 
-        List<string> diferencaAB = new List<string>();
-        List<string> diferencaAC = new List<string>();
-        List<string> diferencaBA = new List<string>();
-        List<string> diferencaBC = new List<string>();
-        List<string> diferencaCA = new List<string>();
-        List<string> diferencaCB = new List<string>();
-        List<string> diferencaABC = new List<string>();
+        List<string> diferenciaAB = new List<string>();
+        List<string> diferenciaAC = new List<string>();
+        List<string> diferenciaBA = new List<string>();
+        List<string> diferenciaBC = new List<string>();
+        List<string> diferenciaCA = new List<string>();
+        List<string> diferenciaCB = new List<string>();
+        List<string> diferenciaABC = new List<string>();
 
 
         List<string> complemento = new List<string>();
@@ -198,14 +198,32 @@ namespace Conjunto
         unionAC = conjuntoA;
         unionBC = conjuntoB;
 
-        for (int i = 0; i < conjuntoA.Count; i++)
-        {
-            for (int j = 0; j < conjuntoB.Count; j++)
+
+            if(txtMostrarA.Equals("Vacio"))
             {
-                if (!unionAB.Contains(conjuntoB[j]))
+                unionAC = conjuntoC;
+                unionAB = conjuntoB;
+                unionABC = unionBC;
+            }
+                if (!txtMostrarB.Text.Equals("vacio"))
                 {
-                    unionAB.Add(conjuntoB[j]);
+                    for (int j = 0; j < conjuntoB.Count; j++)
+                    {
+                        if (!unionAB.Contains(conjuntoB[j]))
+                        {
+                            unionAB.Add(conjuntoB[j]);
+                        }
+                    }
                 }
+                else if(txtMostrarB.Text.Equals("vacio") && countB ==1 )
+                {
+                    unionAB = conjuntoA;
+                    unionBC= conjuntoC;
+                    unionABC = unionAC;
+                }
+
+                if (!txtConjuntoC.Text.Equals("vacio"))
+                {
                     for (int k = 0; k < conjuntoC.Count; k++)
                     {
                         if (!unionAC.Contains(conjuntoC[k]))
@@ -224,50 +242,55 @@ namespace Conjunto
                         }
                     }
                 }
+                else if (txtConjuntoC.Text.Equals("vacio"))
+                {
+                    unionAC = conjuntoA;
+                    unionBC = conjuntoB;
+                    unionABC = uni;
+                }
         }
-    }
 
 
         public void llenarDiferencia()
         {
-            diferencaAB = conjuntoA;
-            diferencaAC = conjuntoA;
-            diferencaBA = conjuntoB;
-            diferencaBC = conjuntoB;
-            diferencaCA = conjuntoC;
-            diferencaCB = conjuntoC;
+            diferenciaAB = conjuntoA;
+            diferenciaAC = conjuntoA;
+            diferenciaBA = conjuntoB;
+            diferenciaBC = conjuntoB;
+            diferenciaCA = conjuntoC;
+            diferenciaCB = conjuntoC;
             for (int i = 0; i < conjuntoA.Count; i++)
             {
                 string a = conjuntoA[i];
-                if (diferencaBA.Contains(a))
+                if (diferenciaBA.Contains(a))
                 {
-                    diferencaAB.Remove(a);
+                    diferenciaAB.Remove(a);
                 }
-                if (diferencaCA.Contains(a))
+                if (diferenciaCA.Contains(a))
                 {
-                    diferencaCB.Remove(a);
+                    diferenciaCB.Remove(a);
                 }
                 for (int j = 0; j < conjuntoB.Count; j++)
                 {
                     string b = conjuntoB[j];
-                    if (diferencaAB.Contains(b))
+                    if (diferenciaAB.Contains(b))
                     {
-                        diferencaAB.Remove(b);
+                        diferenciaAB.Remove(b);
                     }
-                    if (diferencaCB.Contains(b))
+                    if (diferenciaCB.Contains(b))
                     {
-                        diferencaCB.Remove(b);
+                        diferenciaCB.Remove(b);
                     }
                     for (int k = 0; k < conjuntoC.Count; k++)
                     {
                         string c = conjuntoC[k];
-                        if (diferencaBC.Contains(c))
+                        if (diferenciaBC.Contains(c))
                         {
-                            diferencaAB.Remove(c);
+                            diferenciaAB.Remove(c);
                         }
-                        if (diferencaAC.Contains(c))
+                        if (diferenciaAC.Contains(c))
                         {
-                            diferencaCB.Remove(c);
+                            diferenciaCB.Remove(c);
                         }
                     }
                 }

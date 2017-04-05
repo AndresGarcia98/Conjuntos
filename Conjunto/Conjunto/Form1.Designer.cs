@@ -38,6 +38,7 @@
             this.bttGuardarB = new System.Windows.Forms.Button();
             this.bttGuardarC = new System.Windows.Forms.Button();
             this.txt1Operacion = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtOperaciones = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@
             this.lbCjC = new System.Windows.Forms.Label();
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt1Operacion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,6 +164,16 @@
             this.txt1Operacion.TabIndex = 21;
             this.txt1Operacion.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(245, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = " \"vacio\" si el desea algun conjunto vacio";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(84, 390);
@@ -176,7 +186,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 486);
+            this.button1.Location = new System.Drawing.Point(0, 443);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 20);
             this.button1.TabIndex = 33;
@@ -186,7 +196,7 @@
             // 
             // txtOperaciones
             // 
-            this.txtOperaciones.Location = new System.Drawing.Point(6, 563);
+            this.txtOperaciones.Location = new System.Drawing.Point(-5, 469);
             this.txtOperaciones.Name = "txtOperaciones";
             this.txtOperaciones.Size = new System.Drawing.Size(159, 20);
             this.txtOperaciones.TabIndex = 32;
@@ -275,16 +285,6 @@
             this.lbCjA.Size = new System.Drawing.Size(65, 13);
             this.lbCjA.TabIndex = 22;
             this.lbCjA.Text = "Conjunto A: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(245, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = " \"vacio\" si el desea algun conjunto vacio";
             // 
             // Form1
             // 
