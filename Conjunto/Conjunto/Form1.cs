@@ -321,7 +321,7 @@ namespace Conjunto
                 }
                 if(aux1 + 1 == conjuntoC.Count)
                 {
-                    for(int m = 0, m < operacion.Count; m++)
+                    for(int m = 0; m < operacion.Count; m++)
                     {
                         string o = operacion[m];
                         txt1Operacion.Text = txt1Operacion.Text + o;
@@ -334,6 +334,7 @@ namespace Conjunto
         private void button2_Click(object sender, EventArgs e)
         {
             realizarOperaciones();
+            // comente yo. borralo y escribe tu algo
         }
     }
 }
