@@ -155,7 +155,7 @@ namespace Conjunto
 
         public void realizarOperaciones()
         {
-            if (conjuntoA.Count != 0 && conjuntoB.Count > 0 && conjuntoC.Count > 0)
+            if (conjuntoA.Count != 0 && conjuntoB.Count != 0 && conjuntoC.Count != 0)
             {
                 llenarUnion();
                 llenarInterseccion();
