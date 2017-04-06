@@ -37,10 +37,10 @@
             this.bttGuardarA = new System.Windows.Forms.Button();
             this.bttGuardarB = new System.Windows.Forms.Button();
             this.bttGuardarC = new System.Windows.Forms.Button();
-            this.txt1Operacion = new System.Windows.Forms.GroupBox();
+            this.grbxConjuntos = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bttTerminarConjuntos = new System.Windows.Forms.Button();
+            this.btt1Operacion = new System.Windows.Forms.Button();
             this.txtOperaciones = new System.Windows.Forms.TextBox();
             this.bttAgregar = new System.Windows.Forms.Button();
             this.txtAgregarAU = new System.Windows.Forms.TextBox();
@@ -52,7 +52,10 @@
             this.lbCjC = new System.Windows.Forms.Label();
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
-            this.txt1Operacion.SuspendLayout();
+            this.btt3Operacion = new System.Windows.Forms.Button();
+            this.btt2Operacion = new System.Windows.Forms.Button();
+            this.btt4Operacion = new System.Windows.Forms.Button();
+            this.grbxConjuntos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbConjuntoA
@@ -133,36 +136,39 @@
             this.bttGuardarC.UseVisualStyleBackColor = true;
             this.bttGuardarC.Click += new System.EventHandler(this.bttGuardarC_Click);
             // 
-            // txt1Operacion
+            // grbxConjuntos
             // 
-            this.txt1Operacion.Controls.Add(this.label1);
-            this.txt1Operacion.Controls.Add(this.button2);
-            this.txt1Operacion.Controls.Add(this.button1);
-            this.txt1Operacion.Controls.Add(this.txtOperaciones);
-            this.txt1Operacion.Controls.Add(this.bttAgregar);
-            this.txt1Operacion.Controls.Add(this.txtAgregarAU);
-            this.txt1Operacion.Controls.Add(this.txtConjuntoU);
-            this.txt1Operacion.Controls.Add(this.lbConjuntoU);
-            this.txt1Operacion.Controls.Add(this.txtMostrarC);
-            this.txt1Operacion.Controls.Add(this.txtMostrarB);
-            this.txt1Operacion.Controls.Add(this.txtMostrarA);
-            this.txt1Operacion.Controls.Add(this.lbCjC);
-            this.txt1Operacion.Controls.Add(this.lbCjB);
-            this.txt1Operacion.Controls.Add(this.lbCjA);
-            this.txt1Operacion.Controls.Add(this.txtConjuntoB);
-            this.txt1Operacion.Controls.Add(this.bttGuardarB);
-            this.txt1Operacion.Controls.Add(this.bttGuardarC);
-            this.txt1Operacion.Controls.Add(this.lbConjuntoA);
-            this.txt1Operacion.Controls.Add(this.bttGuardarA);
-            this.txt1Operacion.Controls.Add(this.txtConjuntoC);
-            this.txt1Operacion.Controls.Add(this.lbConjuntoB);
-            this.txt1Operacion.Controls.Add(this.txtConjuntoA);
-            this.txt1Operacion.Controls.Add(this.lbConjuntoC);
-            this.txt1Operacion.Location = new System.Drawing.Point(12, 12);
-            this.txt1Operacion.Name = "txt1Operacion";
-            this.txt1Operacion.Size = new System.Drawing.Size(473, 589);
-            this.txt1Operacion.TabIndex = 21;
-            this.txt1Operacion.TabStop = false;
+            this.grbxConjuntos.Controls.Add(this.btt4Operacion);
+            this.grbxConjuntos.Controls.Add(this.btt2Operacion);
+            this.grbxConjuntos.Controls.Add(this.btt3Operacion);
+            this.grbxConjuntos.Controls.Add(this.label1);
+            this.grbxConjuntos.Controls.Add(this.bttTerminarConjuntos);
+            this.grbxConjuntos.Controls.Add(this.btt1Operacion);
+            this.grbxConjuntos.Controls.Add(this.txtOperaciones);
+            this.grbxConjuntos.Controls.Add(this.bttAgregar);
+            this.grbxConjuntos.Controls.Add(this.txtAgregarAU);
+            this.grbxConjuntos.Controls.Add(this.txtConjuntoU);
+            this.grbxConjuntos.Controls.Add(this.lbConjuntoU);
+            this.grbxConjuntos.Controls.Add(this.txtMostrarC);
+            this.grbxConjuntos.Controls.Add(this.txtMostrarB);
+            this.grbxConjuntos.Controls.Add(this.txtMostrarA);
+            this.grbxConjuntos.Controls.Add(this.lbCjC);
+            this.grbxConjuntos.Controls.Add(this.lbCjB);
+            this.grbxConjuntos.Controls.Add(this.lbCjA);
+            this.grbxConjuntos.Controls.Add(this.txtConjuntoB);
+            this.grbxConjuntos.Controls.Add(this.bttGuardarB);
+            this.grbxConjuntos.Controls.Add(this.bttGuardarC);
+            this.grbxConjuntos.Controls.Add(this.lbConjuntoA);
+            this.grbxConjuntos.Controls.Add(this.bttGuardarA);
+            this.grbxConjuntos.Controls.Add(this.txtConjuntoC);
+            this.grbxConjuntos.Controls.Add(this.lbConjuntoB);
+            this.grbxConjuntos.Controls.Add(this.txtConjuntoA);
+            this.grbxConjuntos.Controls.Add(this.lbConjuntoC);
+            this.grbxConjuntos.Location = new System.Drawing.Point(12, 12);
+            this.grbxConjuntos.Name = "grbxConjuntos";
+            this.grbxConjuntos.Size = new System.Drawing.Size(473, 544);
+            this.grbxConjuntos.TabIndex = 21;
+            this.grbxConjuntos.TabStop = false;
             // 
             // label1
             // 
@@ -174,29 +180,29 @@
             this.label1.TabIndex = 35;
             this.label1.Text = " \"vacio\" si el desea algun conjunto vacio";
             // 
-            // button2
+            // bttTerminarConjuntos
             // 
-            this.button2.Location = new System.Drawing.Point(84, 390);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 47);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Termine de llenar los Conjuntos";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.bttTerminarConjuntos.Location = new System.Drawing.Point(84, 390);
+            this.bttTerminarConjuntos.Name = "bttTerminarConjuntos";
+            this.bttTerminarConjuntos.Size = new System.Drawing.Size(70, 47);
+            this.bttTerminarConjuntos.TabIndex = 34;
+            this.bttTerminarConjuntos.Text = "Termine de llenar los Conjuntos";
+            this.bttTerminarConjuntos.UseVisualStyleBackColor = true;
+            this.bttTerminarConjuntos.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btt1Operacion
             // 
-            this.button1.Location = new System.Drawing.Point(26, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 20);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "(AUB)\'-C";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btt1Operacion.Location = new System.Drawing.Point(6, 459);
+            this.btt1Operacion.Name = "btt1Operacion";
+            this.btt1Operacion.Size = new System.Drawing.Size(130, 20);
+            this.btt1Operacion.TabIndex = 33;
+            this.btt1Operacion.Text = "(A dfs B)\'- C";
+            this.btt1Operacion.UseVisualStyleBackColor = true;
+            this.btt1Operacion.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtOperaciones
             // 
-            this.txtOperaciones.Location = new System.Drawing.Point(9, 469);
+            this.txtOperaciones.Location = new System.Drawing.Point(71, 511);
             this.txtOperaciones.Name = "txtOperaciones";
             this.txtOperaciones.Size = new System.Drawing.Size(159, 20);
             this.txtOperaciones.TabIndex = 32;
@@ -286,16 +292,46 @@
             this.lbCjA.TabIndex = 22;
             this.lbCjA.Text = "Conjunto A: ";
             // 
+            // btt3Operacion
+            // 
+            this.btt3Operacion.Location = new System.Drawing.Point(142, 459);
+            this.btt3Operacion.Name = "btt3Operacion";
+            this.btt3Operacion.Size = new System.Drawing.Size(130, 20);
+            this.btt3Operacion.TabIndex = 36;
+            this.btt3Operacion.Text = "(B - A)\' dfs C";
+            this.btt3Operacion.UseVisualStyleBackColor = true;
+            this.btt3Operacion.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btt2Operacion
+            // 
+            this.btt2Operacion.Location = new System.Drawing.Point(6, 485);
+            this.btt2Operacion.Name = "btt2Operacion";
+            this.btt2Operacion.Size = new System.Drawing.Size(130, 20);
+            this.btt2Operacion.TabIndex = 37;
+            this.btt2Operacion.Text = "(B dfs C) dfs A\'";
+            this.btt2Operacion.UseVisualStyleBackColor = true;
+            this.btt2Operacion.Click += new System.EventHandler(this.btt2Operacion_Click);
+            // 
+            // btt4Operacion
+            // 
+            this.btt4Operacion.Location = new System.Drawing.Point(142, 485);
+            this.btt4Operacion.Name = "btt4Operacion";
+            this.btt4Operacion.Size = new System.Drawing.Size(130, 20);
+            this.btt4Operacion.TabIndex = 38;
+            this.btt4Operacion.Text = "(B - A)\' intr c\'";
+            this.btt4Operacion.UseVisualStyleBackColor = true;
+            this.btt4Operacion.Click += new System.EventHandler(this.btt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 613);
-            this.Controls.Add(this.txt1Operacion);
+            this.ClientSize = new System.Drawing.Size(763, 556);
+            this.Controls.Add(this.grbxConjuntos);
             this.Name = "Form1";
             this.Text = "Conjuntos";
-            this.txt1Operacion.ResumeLayout(false);
-            this.txt1Operacion.PerformLayout();
+            this.grbxConjuntos.ResumeLayout(false);
+            this.grbxConjuntos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -311,7 +347,7 @@
         private System.Windows.Forms.Button bttGuardarA;
         private System.Windows.Forms.Button bttGuardarB;
         private System.Windows.Forms.Button bttGuardarC;
-        private System.Windows.Forms.GroupBox txt1Operacion;
+        private System.Windows.Forms.GroupBox grbxConjuntos;
         private System.Windows.Forms.TextBox txtMostrarC;
         private System.Windows.Forms.TextBox txtMostrarB;
         private System.Windows.Forms.TextBox txtMostrarA;
@@ -323,9 +359,12 @@
         private System.Windows.Forms.TextBox txtConjuntoU;
         private System.Windows.Forms.Label lbConjuntoU;
         private System.Windows.Forms.TextBox txtOperaciones;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btt1Operacion;
+        private System.Windows.Forms.Button bttTerminarConjuntos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btt2Operacion;
+        private System.Windows.Forms.Button btt3Operacion;
+        private System.Windows.Forms.Button btt4Operacion;
     }
 }
 

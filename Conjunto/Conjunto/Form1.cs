@@ -16,31 +16,9 @@ namespace Conjunto
         List<string> conjuntoB = new List<string>();
         List<string> conjuntoC = new List<string>();
         List<string> conjuntoU = new List<string>();
-
-        List<string> interseccionAB = new List<string>();
-        List<string> interseccionAC = new List<string>();
-        List<string> interseccionBC = new List<string>();
-        List<string> interseccionABC = new List<string>();
-
-        List<string> unionABC = new List<string>();
-        List<string> unionAB = new List<string>();
-        List<string> unionBC = new List<string>();
-        List<string> unionAC = new List<string>();
-
-        List<string> diferenciaAB = new List<string>();
-        List<string> diferenciaAC = new List<string>();
-        List<string> diferenciaBA = new List<string>();
-        List<string> diferenciaBC = new List<string>();
-        List<string> diferenciaCA = new List<string>();
-        List<string> diferenciaCB = new List<string>();
-        List<string> diferenciaABC = new List<string>();
-
-
-        List<string> complemento = new List<string>();
         List<string> operacion = new List<string>();
 
-
-        private int countA, countB, countC, aux, aux1;
+        private int countA = 2, countB = 2, countC = 2, countNoAgregarMas;
 
         public Form1()
         {
@@ -54,15 +32,28 @@ namespace Conjunto
                 string A = txtConjuntoA.Text;
                 if (!conjuntoA.Contains(A))
                 {
-                    conjuntoA.Add(A);
-                    txtMostrarA.Text = txtMostrarA.Text + A + ",";
                     countA++;
-                    if (A == "vacio" && countA == 1)
+                    conjuntoA.Add(A);
+
+                    if (A == "vacio" && countA == 3)
                     {
+                        countA = 1;
                         txtConjuntoA.ReadOnly = true;
+                        txtMostrarA.Text = txtMostrarA.Text + A;
+                        A = "";
+                        llenarConjuntoU(A);
+                    }
+                    else if (countA == 3)
+                    {
+                        txtMostrarA.Text = txtMostrarA.Text + A;
+                        llenarConjuntoU(A);
+                    }
+                    else
+                    {
+                        txtMostrarA.Text = txtMostrarA.Text + " , " + A;
+                        llenarConjuntoU(A);
                     }
                 }
-                llenarConjuntoU(A);
                 txtConjuntoA.Text = "";
             }
         }
@@ -74,15 +65,27 @@ namespace Conjunto
                 string B = txtConjuntoB.Text;
                 if (!conjuntoB.Contains(B))
                 {
-                    conjuntoA.Add(B);
-                    txtMostrarB.Text = txtMostrarB.Text + B + ",";
                     countB++;
-                    if(B == "vacio" && countB == 1)
+                    conjuntoA.Add(B);
+                    if (B == "vacio" && countB == 3)
                     {
+                        countB = 1;
                         txtConjuntoB.ReadOnly = true;
+                        txtMostrarB.Text = txtMostrarB.Text + B;
+                        B = "";
+                        llenarConjuntoU(B);
+                    }
+                    else if (countB == 3)
+                    {
+                        txtMostrarB.Text = txtMostrarB.Text + B;
+                        llenarConjuntoU(B);
+                    }
+                    else
+                    {
+                        txtMostrarB.Text = txtMostrarB.Text + " , " + B;
+                        llenarConjuntoU(B);
                     }
                 }
-                llenarConjuntoU(B);
                 txtConjuntoB.Text = "";
             }
         }
@@ -94,21 +97,33 @@ namespace Conjunto
                 string C = txtConjuntoC.Text;
                 if (!conjuntoC.Contains(C))
                 {
-                    conjuntoA.Add(C);
-                    txtMostrarC.Text = txtMostrarC.Text + C + ",";
                     countC++;
-                    if (C == "vacio" && countC == 1)
+                    conjuntoA.Add(C);
+                    if (C == "vacio" && countC == 3)
                     {
+                        countC = 1;
                         txtConjuntoC.ReadOnly = true;
+                        txtMostrarC.Text = txtMostrarC.Text + C;
+                        C = "";
+                        llenarConjuntoU(C);
                     }
+                    else if (countC == 3)
+                    {
+                        txtMostrarC.Text = txtMostrarC.Text + C;
+                        llenarConjuntoU(C);
+                    }
+                    else
+                    {
+                        txtMostrarC.Text = txtMostrarC.Text + " , " + C;
+                        llenarConjuntoU(C);
+                    }
+                    txtConjuntoC.Text = "";
                 }
-                llenarConjuntoU(C);
-                txtConjuntoC.Text = "";
             }
         }
         private void bttAgregar_Click(object sender, EventArgs e)
         {
-            if(txtAgregarAU.Text.Equals("vacio"))
+            if (txtAgregarAU.Text.Equals("vacio") && countA == 2 && countB == 2 && countC == 2 )
             {
                 txtMostrarA.Text = "vacio";
                 txtConjuntoA.ReadOnly = true;
@@ -122,21 +137,80 @@ namespace Conjunto
                 txtConjuntoU.Text = "vacio";
                 txtAgregarAU.ReadOnly = true;
             }
-            else if (!txtAgregarAU.Text.Equals("") && conjuntoA.Count != 0 && conjuntoB.Count != 0 && conjuntoC.Count != 0)
+            else if (!txtAgregarAU.Text.Equals("") || countA>= 3 || countB >= 3 || countC >= 3)
             {
                 string u = txtAgregarAU.Text;
                 llenarConjuntoU(u);
             }
             txtAgregarAU.Text = "";
         }
+
+        public void imprimirResultados(List<string> p)
+        {
+            for (int i = 0; i < p.Count; i++)
+            {
+                txtOperaciones.Text = txtOperaciones.Text + p[i];
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtOperaciones.Text = "";
+            HashSet<string> dfAB = new HashSet<string>(conjuntoA);
+            dfAB.ExceptWith(conjuntoB);
+            HashSet<string> comple = new HashSet<string>(conjuntoU);
+            comple.ExceptWith(dfAB);
+            HashSet<string> dfSime = new HashSet<string>(comple);
+            dfSime.SymmetricExceptWith(conjuntoC);
+            operacion = dfSime.ToList<string>();
+            imprimirResultados(operacion);
+        }
+
+        private void btt2Operacion_Click(object sender, EventArgs e)
+        {
+            txtOperaciones.Text = "";
+            HashSet<string> dfSimeBC = new HashSet<string>(conjuntoB);
+            dfSimeBC.SymmetricExceptWith(conjuntoC);
+            HashSet<string> compleA = new HashSet<string>(conjuntoU);
+            compleA.ExceptWith(conjuntoA);
+            HashSet<string> df1Y2 = new HashSet<string>(dfSimeBC);
+            df1Y2.ExceptWith(compleA);
+            operacion = df1Y2.ToList<string>();
+            imprimirResultados(operacion);
+        }
+
+        private void btt_Click(object sender, EventArgs e)
+        {
+            txtOperaciones.Text = "";
+            HashSet<string> dfAB = new HashSet<string>(conjuntoA);
+            dfAB.ExceptWith(conjuntoB);
+            HashSet<string> comple = new HashSet<string>(conjuntoU);
+            comple.ExceptWith(dfAB);
+            HashSet<string> compleC = new HashSet<string>(conjuntoU);
+            compleC.ExceptWith(conjuntoU);
+            HashSet<string> union1Y2 = new HashSet<string>(comple);
+            union1Y2.UnionWith(compleC);
+            operacion = union1Y2.ToList<string>();
+            imprimirResultados(operacion);
+
+        }
+
         public void llenarConjuntoU(string e)
         {
+            if (countA == 1 && countB == 1 && countC == 1)
+            {
+                conjuntoU.Add("vacio");
+                txtConjuntoU.Text = "vacio";
+                txtAgregarAU.ReadOnly = true;
+
+            }
+
             if (!conjuntoU.Contains(e))
             {
-                if( e != "vacio" && countA != 1 && countB != 1 && countC != 1)
+                if (countA > 3 || countB > 3 || countC > 3)
                 {
                     conjuntoU.Add(e);
-                    txtConjuntoU.Text = txtConjuntoU.Text + "," + e;
+                    txtConjuntoU.Text = txtConjuntoU.Text + " , " + e;
                 }
                 else
                 {
@@ -144,200 +218,52 @@ namespace Conjunto
                     txtConjuntoU.Text = txtConjuntoU.Text + e;
                 }
             }
-            if(countA ==1 && countB == 1 && countC == 1)
-            {
-                conjuntoU.Add(e);
-                txtConjuntoU.Text = txtConjuntoU.Text + e ;
-                txtAgregarAU.ReadOnly = true;
-
-            }
         }
 
-        public void realizarOperaciones()
-        {
-            if (conjuntoA.Count != 0 && conjuntoB.Count != 0 && conjuntoC.Count != 0)
-            {
-                llenarUnion();
-                llenarInterseccion();
-                llenarDiferencia();
-            }
-        }
-
-        public void llenarInterseccion()
-        {
-            for (int i = 0; i < conjuntoA.Count; i++)
-            {
-                for (int j = 0; j < conjuntoB.Count; j++)
-                {
-                    if (conjuntoA.Contains(conjuntoB[j]))
-                    {
-                        interseccionAB.Add(conjuntoB[j]);
-                    }
-                    else if (j + 1 == conjuntoB.Count)
-                    {
-                        for (int k = 0; k < conjuntoC.Count; k++)
-                        {
-                            if (interseccionAB.Contains(conjuntoC[k]))
-                            {
-                                interseccionABC.Add(conjuntoC[k]);
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                    }
-                    continue;
-                }
-
-            }
-        }
-        public void llenarUnion()
-        {
-        unionAB = conjuntoA;
-        unionAC = conjuntoA;
-        unionBC = conjuntoB;
-
-
-            if(txtMostrarA.Equals("Vacio"))
-            {
-                unionAC = conjuntoC;
-                unionAB = conjuntoB;
-                unionABC = unionBC;
-            }
-                if (!txtMostrarB.Text.Equals("vacio"))
-                {
-                    for (int j = 0; j < conjuntoB.Count; j++)
-                    {
-                        if (!unionAB.Contains(conjuntoB[j]))
-                        {
-                            unionAB.Add(conjuntoB[j]);
-                        }
-                    }
-                }
-                else if(txtMostrarB.Text.Equals("vacio") && countB ==1 )
-                {
-                    unionAB = conjuntoA;
-                    unionBC= conjuntoC;
-                    unionABC = unionAC;
-                }
-
-                if (!txtConjuntoC.Text.Equals("vacio"))
-                {
-                    for (int k = 0; k < conjuntoC.Count; k++)
-                    {
-                        if (!unionAC.Contains(conjuntoC[k]))
-                        {
-                            unionAC.Add(conjuntoC[k]);
-                        }
-
-                        if (!unionBC.Contains(conjuntoC[k]))
-                        {
-                            unionBC.Add(conjuntoC[k]);
-                        }
-
-                        if (!unionAB.Contains(conjuntoC[k]))
-                        {
-                            unionABC.Add(conjuntoC[k]);
-                        }
-                    }
-                }
-                else if (txtConjuntoC.Text.Equals("vacio"))
-                {
-                    unionAC = conjuntoA;
-                    unionBC = conjuntoB;
-                    unionABC = unionAB;
-                }
-        }
-
-
-        public void llenarDiferencia()
-        {
-            diferenciaAB = conjuntoA;
-            diferenciaAC = conjuntoA;
-            diferenciaBA = conjuntoB;
-            diferenciaBC = conjuntoB;
-            diferenciaCA = conjuntoC;
-            diferenciaCB = conjuntoC;
-            for (int i = 0; i < conjuntoA.Count; i++)
-            {
-                string a = conjuntoA[i];
-                if (diferenciaBA.Contains(a))
-                {
-                    diferenciaAB.Remove(a);
-                }
-                if (diferenciaCA.Contains(a))
-                {
-                    diferenciaCB.Remove(a);
-                }
-                for (int j = 0; j < conjuntoB.Count; j++)
-                {
-                    string b = conjuntoB[j];
-                    if (diferenciaAB.Contains(b))
-                    {
-                        diferenciaAB.Remove(b);
-                    }
-                    if (diferenciaCB.Contains(b))
-                    {
-                        diferenciaCB.Remove(b);
-                    }
-                    for (int k = 0; k < conjuntoC.Count; k++)
-                    {
-                        string c = conjuntoC[k];
-                        if (diferenciaBC.Contains(c))
-                        {
-                            diferenciaAB.Remove(c);
-                        }
-                        if (diferenciaAC.Contains(c))
-                        {
-                            diferenciaCB.Remove(c);
-                        }
-                    }
-                }
-            }
-        }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            txt1Operacion.Text = "";
-            for (int j = 0; j < diferenciaAB.Count; j++)
+            if (countNoAgregarMas >= 1)
             {
-                if (!conjuntoU.Contains(diferenciaAB[j]))
+                grbxConjuntos.Text = "";
+                HashSet<string> dfSimetrica = new HashSet<string>(conjuntoA);
+                dfSimetrica.SymmetricExceptWith(conjuntoB);
+                HashSet<string> comple = new HashSet<string>(conjuntoU);
+                comple.ExceptWith(dfSimetrica);
+                HashSet<string> dfC = new HashSet<string>(comple);
+                dfC.ExceptWith(conjuntoC);
+                operacion = dfC.ToList<string>();
+                for(int i = 0; i < operacion.Count; i++)
                 {
-                    string c = conjuntoU[j];
-                    complemento.Add(c);
-                    aux = j;
+                    txtOperaciones.Text = txtOperaciones.Text + operacion[i];
                 }
             }
-            if (aux + 1 == diferenciaAB.Count)
+            else
             {
-                for(int i = 0; i < conjuntoC.Count; i++)
-                {
-                    if(!complemento.Contains(conjuntoC[i]))
-                    {
-                        string com = conjuntoC[i];
-                        operacion.Add(com);
-                    }
-                    aux1 = i;
-                }
-                if(aux1 + 1 == conjuntoC.Count)
-                {
-                    for(int m = 0; m < operacion.Count; m++)
-                    {
-                        string o = operacion[m];
-                        txt1Operacion.Text = txt1Operacion.Text + o;
-                    }
-                }
+                MessageBox.Show("Señor Usuario debe Primero debe Terminar de llenar los conjuntos", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            realizarOperaciones();
-            // comente yo. borralo y escribe tu algo
+            if (!txtMostrarA.Text.Equals("") && !txtMostrarB.Text.Equals("") && !txtMostrarC.Text.Equals(""))
+            {
+                txtConjuntoA.ReadOnly = true;
+                txtConjuntoB.ReadOnly = true;
+                txtConjuntoC.ReadOnly = true;
+                txtAgregarAU.ReadOnly = true;
+                countNoAgregarMas++;
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los conjuntos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
+
+
+    
 
 
 
