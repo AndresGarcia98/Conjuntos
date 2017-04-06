@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lbConjuntoA = new System.Windows.Forms.Label();
             this.lbConjuntoB = new System.Windows.Forms.Label();
             this.lbConjuntoC = new System.Windows.Forms.Label();
@@ -38,6 +39,9 @@
             this.bttGuardarB = new System.Windows.Forms.Button();
             this.bttGuardarC = new System.Windows.Forms.Button();
             this.grbxConjuntos = new System.Windows.Forms.GroupBox();
+            this.btt4Operacion = new System.Windows.Forms.Button();
+            this.btt2Operacion = new System.Windows.Forms.Button();
+            this.btt3Operacion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.bttTerminarConjuntos = new System.Windows.Forms.Button();
             this.btt1Operacion = new System.Windows.Forms.Button();
@@ -52,10 +56,10 @@
             this.lbCjC = new System.Windows.Forms.Label();
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
-            this.btt3Operacion = new System.Windows.Forms.Button();
-            this.btt2Operacion = new System.Windows.Forms.Button();
-            this.btt4Operacion = new System.Windows.Forms.Button();
+            this.lbconjunA = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbxConjuntos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbConjuntoA
@@ -169,6 +173,36 @@
             this.grbxConjuntos.Size = new System.Drawing.Size(473, 544);
             this.grbxConjuntos.TabIndex = 21;
             this.grbxConjuntos.TabStop = false;
+            // 
+            // btt4Operacion
+            // 
+            this.btt4Operacion.Location = new System.Drawing.Point(142, 485);
+            this.btt4Operacion.Name = "btt4Operacion";
+            this.btt4Operacion.Size = new System.Drawing.Size(130, 20);
+            this.btt4Operacion.TabIndex = 38;
+            this.btt4Operacion.Text = "(B - A)\' intr c\'";
+            this.btt4Operacion.UseVisualStyleBackColor = true;
+            this.btt4Operacion.Click += new System.EventHandler(this.btt_Click);
+            // 
+            // btt2Operacion
+            // 
+            this.btt2Operacion.Location = new System.Drawing.Point(6, 485);
+            this.btt2Operacion.Name = "btt2Operacion";
+            this.btt2Operacion.Size = new System.Drawing.Size(130, 20);
+            this.btt2Operacion.TabIndex = 37;
+            this.btt2Operacion.Text = "(B dfs C) dfs A\'";
+            this.btt2Operacion.UseVisualStyleBackColor = true;
+            this.btt2Operacion.Click += new System.EventHandler(this.btt2Operacion_Click);
+            // 
+            // btt3Operacion
+            // 
+            this.btt3Operacion.Location = new System.Drawing.Point(142, 459);
+            this.btt3Operacion.Name = "btt3Operacion";
+            this.btt3Operacion.Size = new System.Drawing.Size(130, 20);
+            this.btt3Operacion.TabIndex = 36;
+            this.btt3Operacion.Text = "(B - A)\' dfs C";
+            this.btt3Operacion.UseVisualStyleBackColor = true;
+            this.btt3Operacion.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -292,47 +326,41 @@
             this.lbCjA.TabIndex = 22;
             this.lbCjA.Text = "Conjunto A: ";
             // 
-            // btt3Operacion
+            // lbconjunA
             // 
-            this.btt3Operacion.Location = new System.Drawing.Point(142, 459);
-            this.btt3Operacion.Name = "btt3Operacion";
-            this.btt3Operacion.Size = new System.Drawing.Size(130, 20);
-            this.btt3Operacion.TabIndex = 36;
-            this.btt3Operacion.Text = "(B - A)\' dfs C";
-            this.btt3Operacion.UseVisualStyleBackColor = true;
-            this.btt3Operacion.Click += new System.EventHandler(this.button1_Click);
+            this.lbconjunA.AutoSize = true;
+            this.lbconjunA.Location = new System.Drawing.Point(594, 145);
+            this.lbconjunA.Name = "lbconjunA";
+            this.lbconjunA.Size = new System.Drawing.Size(0, 13);
+            this.lbconjunA.TabIndex = 22;
+            this.lbconjunA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btt2Operacion
+            // pictureBox1
             // 
-            this.btt2Operacion.Location = new System.Drawing.Point(6, 485);
-            this.btt2Operacion.Name = "btt2Operacion";
-            this.btt2Operacion.Size = new System.Drawing.Size(130, 20);
-            this.btt2Operacion.TabIndex = 37;
-            this.btt2Operacion.Text = "(B dfs C) dfs A\'";
-            this.btt2Operacion.UseVisualStyleBackColor = true;
-            this.btt2Operacion.Click += new System.EventHandler(this.btt2Operacion_Click);
-            // 
-            // btt4Operacion
-            // 
-            this.btt4Operacion.Location = new System.Drawing.Point(142, 485);
-            this.btt4Operacion.Name = "btt4Operacion";
-            this.btt4Operacion.Size = new System.Drawing.Size(130, 20);
-            this.btt4Operacion.TabIndex = 38;
-            this.btt4Operacion.Text = "(B - A)\' intr c\'";
-            this.btt4Operacion.UseVisualStyleBackColor = true;
-            this.btt4Operacion.Click += new System.EventHandler(this.btt_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(518, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(827, 635);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 556);
+            this.ClientSize = new System.Drawing.Size(1340, 670);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbconjunA);
             this.Controls.Add(this.grbxConjuntos);
             this.Name = "Form1";
             this.Text = "Conjuntos";
             this.grbxConjuntos.ResumeLayout(false);
             this.grbxConjuntos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -365,6 +393,8 @@
         private System.Windows.Forms.Button btt2Operacion;
         private System.Windows.Forms.Button btt3Operacion;
         private System.Windows.Forms.Button btt4Operacion;
+        private System.Windows.Forms.Label lbconjunA;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

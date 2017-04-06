@@ -18,6 +18,11 @@ namespace Conjunto
         List<string> conjuntoU = new List<string>();
         List<string> operacion = new List<string>();
 
+        List<string> interseccionAB = new List<string>();
+        List<string> interseccionAC = new List<string>();
+        List<string> interseccionBC = new List<string>();
+        List<string> interseccionABC = new List<string>();
+
         private int countA = 2, countB = 2, countC = 2, countNoAgregarMas;
 
         public Form1()
@@ -145,6 +150,25 @@ namespace Conjunto
             txtAgregarAU.Text = "";
         }
 
+        public void hallarIntersepciones()
+        {
+            HashSet<string> intrAB = new HashSet<string>(conjuntoA);
+            intrAB.IntersectWith(conjuntoB);
+            interseccionAB = intrAB.ToList<string>();
+
+            HashSet<string> intrAC= new HashSet<string>(conjuntoA);
+            intrAB.IntersectWith(conjuntoC);
+            interseccionAC = intrAC.ToList<string>();
+
+            HashSet<string> intrBC = new HashSet<string>(conjuntoB);
+            intrAB.IntersectWith(conjuntoC);
+            interseccionBC = intrBC.ToList<string>();
+
+            HashSet<string> intrABC = new HashSet<string>(interseccionAB);
+            intrABC.IntersectWith(conjuntoC);
+            interseccionABC = intrABC.ToList<string>();
+
+        }
         public void imprimirResultados(List<string> p)
         {
             for (int i = 0; i < p.Count; i++)
@@ -192,6 +216,11 @@ namespace Conjunto
             union1Y2.UnionWith(compleC);
             operacion = union1Y2.ToList<string>();
             imprimirResultados(operacion);
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -253,6 +282,7 @@ namespace Conjunto
                 txtConjuntoC.ReadOnly = true;
                 txtAgregarAU.ReadOnly = true;
                 countNoAgregarMas++;
+                hallarIntersepciones();
             }
             else
             {
