@@ -142,7 +142,7 @@ namespace Conjunto
                 txtConjuntoU.Text = "vacio";
                 txtAgregarAU.ReadOnly = true;
             }
-            else if (!txtAgregarAU.Text.Equals("") || countA>= 3 || countB >= 3 || countC >= 3)
+            else if (!txtAgregarAU.Text.Equals("") && countA>= 3 || countB >= 3 || countC >= 3)
             {
                 string u = txtAgregarAU.Text;
                 llenarConjuntoU(u);
@@ -179,49 +179,68 @@ namespace Conjunto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtOperaciones.Text = "";
-            HashSet<string> dfAB = new HashSet<string>(conjuntoA);
-            dfAB.ExceptWith(conjuntoB);
-            HashSet<string> comple = new HashSet<string>(conjuntoU);
-            comple.ExceptWith(dfAB);
-            HashSet<string> dfSime = new HashSet<string>(comple);
-            dfSime.SymmetricExceptWith(conjuntoC);
-            operacion = dfSime.ToList<string>();
-            imprimirResultados(operacion);
+            if (countNoAgregarMas >= 1)
+            {
+                txtOperaciones.Text = "";
+                HashSet<string> dfAB = new HashSet<string>(conjuntoA);
+                dfAB.ExceptWith(conjuntoB);
+                HashSet<string> comple = new HashSet<string>(conjuntoU);
+                comple.ExceptWith(dfAB);
+                HashSet<string> dfSime = new HashSet<string>(comple);
+                dfSime.SymmetricExceptWith(conjuntoC);
+                operacion = dfSime.ToList<string>();
+                imprimirResultados(operacion);
+            }
+            else
+            {
+                MessageBox.Show("Señor Usuario debe Primero debe Terminar de llenar los conjuntos", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btt2Operacion_Click(object sender, EventArgs e)
         {
-            txtOperaciones.Text = "";
-            HashSet<string> dfSimeBC = new HashSet<string>(conjuntoB);
-            dfSimeBC.SymmetricExceptWith(conjuntoC);
-            HashSet<string> compleA = new HashSet<string>(conjuntoU);
-            compleA.ExceptWith(conjuntoA);
-            HashSet<string> df1Y2 = new HashSet<string>(dfSimeBC);
-            df1Y2.ExceptWith(compleA);
-            operacion = df1Y2.ToList<string>();
-            imprimirResultados(operacion);
+            if (countNoAgregarMas >= 1)
+            {
+                txtOperaciones.Text = "";
+                HashSet<string> dfSimeBC = new HashSet<string>(conjuntoB);
+                dfSimeBC.SymmetricExceptWith(conjuntoC);
+                HashSet<string> compleA = new HashSet<string>(conjuntoU);
+                compleA.ExceptWith(conjuntoA);
+                HashSet<string> df1Y2 = new HashSet<string>(dfSimeBC);
+                df1Y2.ExceptWith(compleA);
+                operacion = df1Y2.ToList<string>();
+                imprimirResultados(operacion);
+            }
+            else
+            {
+                MessageBox.Show("Señor Usuario debe Primero debe Terminar de llenar los conjuntos", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btt_Click(object sender, EventArgs e)
         {
-            txtOperaciones.Text = "";
-            HashSet<string> dfAB = new HashSet<string>(conjuntoA);
-            dfAB.ExceptWith(conjuntoB);
-            HashSet<string> comple = new HashSet<string>(conjuntoU);
-            comple.ExceptWith(dfAB);
-            HashSet<string> compleC = new HashSet<string>(conjuntoU);
-            compleC.ExceptWith(conjuntoU);
-            HashSet<string> union1Y2 = new HashSet<string>(comple);
-            union1Y2.UnionWith(compleC);
-            operacion = union1Y2.ToList<string>();
-            imprimirResultados(operacion);
+            if (countNoAgregarMas >= 1)
+            {
+                txtOperaciones.Text = "";
+                HashSet<string> dfAB = new HashSet<string>(conjuntoA);
+                dfAB.ExceptWith(conjuntoB);
+                HashSet<string> comple = new HashSet<string>(conjuntoU);
+                comple.ExceptWith(dfAB);
+                HashSet<string> compleC = new HashSet<string>(conjuntoU);
+                compleC.ExceptWith(conjuntoU);
+                HashSet<string> union1Y2 = new HashSet<string>(comple);
+                union1Y2.UnionWith(compleC);
+                operacion = union1Y2.ToList<string>();
+                imprimirResultados(operacion);
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            }
+            else
+            {
+                MessageBox.Show("Señor Usuario debe Primero debe Terminar de llenar los conjuntos", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void llenarConjuntoU(string e)
@@ -253,18 +272,13 @@ namespace Conjunto
         {
             if (countNoAgregarMas >= 1)
             {
-                grbxConjuntos.Text = "";
+                txtOperaciones.Text = "";
                 HashSet<string> dfSimetrica = new HashSet<string>(conjuntoA);
                 dfSimetrica.SymmetricExceptWith(conjuntoB);
                 HashSet<string> comple = new HashSet<string>(conjuntoU);
                 comple.ExceptWith(dfSimetrica);
                 HashSet<string> dfC = new HashSet<string>(comple);
                 dfC.ExceptWith(conjuntoC);
-                operacion = dfC.ToList<string>();
-                for(int i = 0; i < operacion.Count; i++)
-                {
-                    txtOperaciones.Text = txtOperaciones.Text + operacion[i];
-                }
             }
             else
             {
