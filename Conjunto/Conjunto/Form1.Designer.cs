@@ -42,7 +42,7 @@
             this.btt4Operacion = new System.Windows.Forms.Button();
             this.btt2Operacion = new System.Windows.Forms.Button();
             this.btt3Operacion = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbMensajeVacio = new System.Windows.Forms.Label();
             this.bttTerminarConjuntos = new System.Windows.Forms.Button();
             this.btt1Operacion = new System.Windows.Forms.Button();
             this.txtOperaciones = new System.Windows.Forms.TextBox();
@@ -56,8 +56,14 @@
             this.lbCjC = new System.Windows.Forms.Label();
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
-            this.lbconjunA = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbElementosA = new System.Windows.Forms.Label();
+            this.lbElementosB = new System.Windows.Forms.Label();
+            this.lbElementosC = new System.Windows.Forms.Label();
+            this.lbInterAB = new System.Windows.Forms.Label();
+            this.lbInterAC = new System.Windows.Forms.Label();
+            this.lbInterABC = new System.Windows.Forms.Label();
+            this.lbInterBC = new System.Windows.Forms.Label();
             this.grbxConjuntos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -145,7 +151,7 @@
             this.grbxConjuntos.Controls.Add(this.btt4Operacion);
             this.grbxConjuntos.Controls.Add(this.btt2Operacion);
             this.grbxConjuntos.Controls.Add(this.btt3Operacion);
-            this.grbxConjuntos.Controls.Add(this.label1);
+            this.grbxConjuntos.Controls.Add(this.lbMensajeVacio);
             this.grbxConjuntos.Controls.Add(this.bttTerminarConjuntos);
             this.grbxConjuntos.Controls.Add(this.btt1Operacion);
             this.grbxConjuntos.Controls.Add(this.txtOperaciones);
@@ -204,15 +210,15 @@
             this.btt3Operacion.UseVisualStyleBackColor = true;
             this.btt3Operacion.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // lbMensajeVacio
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(245, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = " \"vacio\" si el desea algun conjunto vacio";
+            this.lbMensajeVacio.AutoSize = true;
+            this.lbMensajeVacio.ForeColor = System.Drawing.Color.Red;
+            this.lbMensajeVacio.Location = new System.Drawing.Point(245, 35);
+            this.lbMensajeVacio.Name = "lbMensajeVacio";
+            this.lbMensajeVacio.Size = new System.Drawing.Size(201, 13);
+            this.lbMensajeVacio.TabIndex = 35;
+            this.lbMensajeVacio.Text = " \"vacio\" si el desea algun conjunto vacio";
             // 
             // bttTerminarConjuntos
             // 
@@ -238,6 +244,7 @@
             // 
             this.txtOperaciones.Location = new System.Drawing.Point(71, 511);
             this.txtOperaciones.Name = "txtOperaciones";
+            this.txtOperaciones.ReadOnly = true;
             this.txtOperaciones.Size = new System.Drawing.Size(159, 20);
             this.txtOperaciones.TabIndex = 32;
             // 
@@ -326,32 +333,85 @@
             this.lbCjA.TabIndex = 22;
             this.lbCjA.Text = "Conjunto A: ";
             // 
-            // lbconjunA
-            // 
-            this.lbconjunA.AutoSize = true;
-            this.lbconjunA.Location = new System.Drawing.Point(594, 145);
-            this.lbconjunA.Name = "lbconjunA";
-            this.lbconjunA.Size = new System.Drawing.Size(0, 13);
-            this.lbconjunA.TabIndex = 22;
-            this.lbconjunA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(518, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(827, 635);
+            this.pictureBox1.Size = new System.Drawing.Size(841, 635);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
+            // 
+            // lbElementosA
+            // 
+            this.lbElementosA.AutoSize = true;
+            this.lbElementosA.Location = new System.Drawing.Point(677, 215);
+            this.lbElementosA.Name = "lbElementosA";
+            this.lbElementosA.Size = new System.Drawing.Size(0, 13);
+            this.lbElementosA.TabIndex = 24;
+            // 
+            // lbElementosB
+            // 
+            this.lbElementosB.AutoSize = true;
+            this.lbElementosB.Location = new System.Drawing.Point(1189, 215);
+            this.lbElementosB.Name = "lbElementosB";
+            this.lbElementosB.Size = new System.Drawing.Size(0, 13);
+            this.lbElementosB.TabIndex = 25;
+            // 
+            // lbElementosC
+            // 
+            this.lbElementosC.AutoSize = true;
+            this.lbElementosC.Location = new System.Drawing.Point(756, 447);
+            this.lbElementosC.Name = "lbElementosC";
+            this.lbElementosC.Size = new System.Drawing.Size(0, 13);
+            this.lbElementosC.TabIndex = 26;
+            // 
+            // lbInterAB
+            // 
+            this.lbInterAB.AutoSize = true;
+            this.lbInterAB.Location = new System.Drawing.Point(843, 171);
+            this.lbInterAB.Name = "lbInterAB";
+            this.lbInterAB.Size = new System.Drawing.Size(0, 13);
+            this.lbInterAB.TabIndex = 27;
+            // 
+            // lbInterAC
+            // 
+            this.lbInterAC.AutoSize = true;
+            this.lbInterAC.Location = new System.Drawing.Point(756, 357);
+            this.lbInterAC.Name = "lbInterAC";
+            this.lbInterAC.Size = new System.Drawing.Size(0, 13);
+            this.lbInterAC.TabIndex = 28;
+            // 
+            // lbInterABC
+            // 
+            this.lbInterABC.AutoSize = true;
+            this.lbInterABC.Location = new System.Drawing.Point(843, 254);
+            this.lbInterABC.Name = "lbInterABC";
+            this.lbInterABC.Size = new System.Drawing.Size(0, 13);
+            this.lbInterABC.TabIndex = 29;
+            // 
+            // lbInterBC
+            // 
+            this.lbInterBC.AutoSize = true;
+            this.lbInterBC.Location = new System.Drawing.Point(1127, 357);
+            this.lbInterBC.Name = "lbInterBC";
+            this.lbInterBC.Size = new System.Drawing.Size(0, 13);
+            this.lbInterBC.TabIndex = 30;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 670);
+            this.Controls.Add(this.lbInterBC);
+            this.Controls.Add(this.lbInterABC);
+            this.Controls.Add(this.lbInterAC);
+            this.Controls.Add(this.lbInterAB);
+            this.Controls.Add(this.lbElementosC);
+            this.Controls.Add(this.lbElementosB);
+            this.Controls.Add(this.lbElementosA);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lbconjunA);
             this.Controls.Add(this.grbxConjuntos);
             this.Name = "Form1";
             this.Text = "Conjuntos";
@@ -388,12 +448,18 @@
         private System.Windows.Forms.TextBox txtOperaciones;
         private System.Windows.Forms.Button btt1Operacion;
         private System.Windows.Forms.Button bttTerminarConjuntos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbMensajeVacio;
         private System.Windows.Forms.Button btt2Operacion;
         private System.Windows.Forms.Button btt3Operacion;
         private System.Windows.Forms.Button btt4Operacion;
-        private System.Windows.Forms.Label lbconjunA;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbElementosA;
+        private System.Windows.Forms.Label lbElementosB;
+        private System.Windows.Forms.Label lbElementosC;
+        private System.Windows.Forms.Label lbInterAB;
+        private System.Windows.Forms.Label lbInterAC;
+        private System.Windows.Forms.Label lbInterABC;
+        private System.Windows.Forms.Label lbInterBC;
     }
 }
 
