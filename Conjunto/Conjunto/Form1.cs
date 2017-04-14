@@ -22,7 +22,7 @@ namespace Conjunto
         HashSet<string> interseccionBC = new HashSet<string>();
         HashSet<string> interseccionABC = new HashSet<string>();
 
-        private int countA = 2, countB = 2, countC = 2, countNoAgregarMas, aux, counter;
+        private int countA = 2, countB = 2, countC = 2, countNoAgregarMas, aux, counter, count;
 
         public Form1()
         {
@@ -37,24 +37,26 @@ namespace Conjunto
                 if (!conjuntoA.Contains(A))
                 {
                     countA++;
-                    conjuntoA.Add(A);
-
                     if (A == "vacio" && countA == 3)
                     {
                         countA = 1;
                         txtConjuntoA.ReadOnly = true;
                         txtMostrarA.Text = txtMostrarA.Text + A;
+                        A = "¡¿?!";
+                        conjuntoA.Add(A);
                         A = "";
                         llenarConjuntoU(A, aux);
                     }
                     else if (countA == 3)
                     {
+                        conjuntoA.Add(A);
                         aux++;
                         txtMostrarA.Text = txtMostrarA.Text + A;
                         llenarConjuntoU(A, aux);
                     }
                     else
                     {
+                        conjuntoA.Add(A);
                         aux++;
                         txtMostrarA.Text = txtMostrarA.Text + " , " + A;
                         llenarConjuntoU(A, aux);
@@ -72,23 +74,26 @@ namespace Conjunto
                 if (!conjuntoB.Contains(B))
                 {
                     countB++;
-                    conjuntoB.Add(B);
                     if (B == "vacio" && countB == 3)
                     {
                         countB = 1;
                         txtConjuntoB.ReadOnly = true;
                         txtMostrarB.Text = txtMostrarB.Text + B;
+                        B = "¡¿?!";
+                        conjuntoB.Add(B);
                         B = "";
                         llenarConjuntoU(B, aux);
                     }
                     else if (countB == 3)
                     {
+                        conjuntoB.Add(B);
                         aux++;
                         txtMostrarB.Text = txtMostrarB.Text + B;
                         llenarConjuntoU(B, aux);
                     }
                     else
                     {
+                        conjuntoB.Add(B);
                         aux++;
                         txtMostrarB.Text = txtMostrarB.Text + " , " + B;
                         llenarConjuntoU(B, aux);
@@ -106,23 +111,26 @@ namespace Conjunto
                 if (!conjuntoC.Contains(C))
                 {
                     countC++;
-                    conjuntoC.Add(C);
                     if (C == "vacio" && countC == 3)
                     {
                         countC = 1;
                         txtConjuntoC.ReadOnly = true;
                         txtMostrarC.Text = txtMostrarC.Text + C;
+                        C = "¡¿?!";
+                        conjuntoC.Add(C);
                         C = "";
                         llenarConjuntoU(C, aux);
                     }
                     else if (countC == 3)
                     {
+                        conjuntoC.Add(C);
                         aux++;
                         txtMostrarC.Text = txtMostrarC.Text + C;
                         llenarConjuntoU(C, aux);
                     }
                     else
                     {
+                        conjuntoC.Add(C);
                         aux++;
                         txtMostrarC.Text = txtMostrarC.Text + " , " + C;
                         llenarConjuntoU(C, aux);
@@ -194,66 +202,6 @@ namespace Conjunto
 
             HashSet<string> intrABC = new HashSet<string>(interseccionAB);
             intrABC.IntersectWith(conjuntoC);
-
-        }
-
-        public void graficarEnVenn(int j, HashSet<string> inter, HashSet<string> interABC)
-        {
-            switch(j)
-            {
-                case 1:
-                    foreach(string i in inter)
-                    {
-                        if(!interABC.Contains(i))
-                        {
-                            lbInterAB.Text = lbInterAB.Text + i;
-                        }
-
-                        if(!conjuntoA.Contains(i))
-                        {
-                            lbElementosA.Text = lbElementosA.Text + i;
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-               break;
-
-                case 2:
-                    foreach(string i  in inter)
-                    {
-                        if (!interABC.Contains(i))
-                        {
-                            lbInterAC.Text = lbInterAC.Text + i;
-                        }
-
-                        if (!inter.Contains(i))
-                        {
-                            lbElementosB.Text = lbElementosB.Text + i;
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                break;
-
-                case 3:
-                    foreach (string i in conjuntoC)
-                    {
-                        if (!inter.Contains(i))
-                        {
-                            lbElementosC.Text = lbElementosC.Text + i;
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-               break;
-
-            }
         }
         public void imprimirResultados(HashSet<string> p)
         {

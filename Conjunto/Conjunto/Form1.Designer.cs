@@ -57,13 +57,6 @@
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbElementosA = new System.Windows.Forms.Label();
-            this.lbElementosB = new System.Windows.Forms.Label();
-            this.lbElementosC = new System.Windows.Forms.Label();
-            this.lbInterAB = new System.Windows.Forms.Label();
-            this.lbInterAC = new System.Windows.Forms.Label();
-            this.lbInterABC = new System.Windows.Forms.Label();
-            this.lbInterBC = new System.Windows.Forms.Label();
             this.grbxConjuntos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -186,7 +179,7 @@
             this.btt4Operacion.Name = "btt4Operacion";
             this.btt4Operacion.Size = new System.Drawing.Size(130, 20);
             this.btt4Operacion.TabIndex = 38;
-            this.btt4Operacion.Text = "(B - A)\' intr c\'";
+            this.btt4Operacion.Text = "(B - A)\' intr C\'";
             this.btt4Operacion.UseVisualStyleBackColor = true;
             this.btt4Operacion.Click += new System.EventHandler(this.btt_Click);
             // 
@@ -343,74 +336,11 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
-            // lbElementosA
-            // 
-            this.lbElementosA.AutoSize = true;
-            this.lbElementosA.Location = new System.Drawing.Point(677, 215);
-            this.lbElementosA.Name = "lbElementosA";
-            this.lbElementosA.Size = new System.Drawing.Size(0, 13);
-            this.lbElementosA.TabIndex = 24;
-            // 
-            // lbElementosB
-            // 
-            this.lbElementosB.AutoSize = true;
-            this.lbElementosB.Location = new System.Drawing.Point(1189, 215);
-            this.lbElementosB.Name = "lbElementosB";
-            this.lbElementosB.Size = new System.Drawing.Size(0, 13);
-            this.lbElementosB.TabIndex = 25;
-            // 
-            // lbElementosC
-            // 
-            this.lbElementosC.AutoSize = true;
-            this.lbElementosC.Location = new System.Drawing.Point(756, 447);
-            this.lbElementosC.Name = "lbElementosC";
-            this.lbElementosC.Size = new System.Drawing.Size(0, 13);
-            this.lbElementosC.TabIndex = 26;
-            // 
-            // lbInterAB
-            // 
-            this.lbInterAB.AutoSize = true;
-            this.lbInterAB.Location = new System.Drawing.Point(843, 171);
-            this.lbInterAB.Name = "lbInterAB";
-            this.lbInterAB.Size = new System.Drawing.Size(0, 13);
-            this.lbInterAB.TabIndex = 27;
-            // 
-            // lbInterAC
-            // 
-            this.lbInterAC.AutoSize = true;
-            this.lbInterAC.Location = new System.Drawing.Point(756, 357);
-            this.lbInterAC.Name = "lbInterAC";
-            this.lbInterAC.Size = new System.Drawing.Size(0, 13);
-            this.lbInterAC.TabIndex = 28;
-            // 
-            // lbInterABC
-            // 
-            this.lbInterABC.AutoSize = true;
-            this.lbInterABC.Location = new System.Drawing.Point(843, 254);
-            this.lbInterABC.Name = "lbInterABC";
-            this.lbInterABC.Size = new System.Drawing.Size(0, 13);
-            this.lbInterABC.TabIndex = 29;
-            // 
-            // lbInterBC
-            // 
-            this.lbInterBC.AutoSize = true;
-            this.lbInterBC.Location = new System.Drawing.Point(1127, 357);
-            this.lbInterBC.Name = "lbInterBC";
-            this.lbInterBC.Size = new System.Drawing.Size(0, 13);
-            this.lbInterBC.TabIndex = 30;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 670);
-            this.Controls.Add(this.lbInterBC);
-            this.Controls.Add(this.lbInterABC);
-            this.Controls.Add(this.lbInterAC);
-            this.Controls.Add(this.lbInterAB);
-            this.Controls.Add(this.lbElementosC);
-            this.Controls.Add(this.lbElementosB);
-            this.Controls.Add(this.lbElementosA);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grbxConjuntos);
             this.Name = "Form1";
@@ -419,7 +349,6 @@
             this.grbxConjuntos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -453,13 +382,6 @@
         private System.Windows.Forms.Button btt3Operacion;
         private System.Windows.Forms.Button btt4Operacion;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbElementosA;
-        private System.Windows.Forms.Label lbElementosB;
-        private System.Windows.Forms.Label lbElementosC;
-        private System.Windows.Forms.Label lbInterAB;
-        private System.Windows.Forms.Label lbInterAC;
-        private System.Windows.Forms.Label lbInterABC;
-        private System.Windows.Forms.Label lbInterBC;
     }
 }
 
