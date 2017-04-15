@@ -57,6 +57,14 @@
             this.lbCjB = new System.Windows.Forms.Label();
             this.lbCjA = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtElementosA = new System.Windows.Forms.TextBox();
+            this.txtElementosAB = new System.Windows.Forms.TextBox();
+            this.txtElementosAC = new System.Windows.Forms.TextBox();
+            this.txtElementosABC = new System.Windows.Forms.TextBox();
+            this.txtElementosB = new System.Windows.Forms.TextBox();
+            this.txtElementosC = new System.Windows.Forms.TextBox();
+            this.txtElementosBC = new System.Windows.Forms.TextBox();
+            this.txtElementosU = new System.Windows.Forms.TextBox();
             this.grbxConjuntos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -329,18 +337,91 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(518, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(495, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(841, 635);
+            this.pictureBox1.Size = new System.Drawing.Size(862, 635);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtElementosA
+            // 
+            this.txtElementosA.BackColor = System.Drawing.SystemColors.Control;
+            this.txtElementosA.Location = new System.Drawing.Point(642, 228);
+            this.txtElementosA.Name = "txtElementosA";
+            this.txtElementosA.ReadOnly = true;
+            this.txtElementosA.Size = new System.Drawing.Size(145, 20);
+            this.txtElementosA.TabIndex = 24;
+            // 
+            // txtElementosAB
+            // 
+            this.txtElementosAB.Location = new System.Drawing.Point(825, 171);
+            this.txtElementosAB.Name = "txtElementosAB";
+            this.txtElementosAB.ReadOnly = true;
+            this.txtElementosAB.Size = new System.Drawing.Size(179, 20);
+            this.txtElementosAB.TabIndex = 25;
+            // 
+            // txtElementosAC
+            // 
+            this.txtElementosAC.Location = new System.Drawing.Point(727, 376);
+            this.txtElementosAC.Name = "txtElementosAC";
+            this.txtElementosAC.ReadOnly = true;
+            this.txtElementosAC.Size = new System.Drawing.Size(127, 20);
+            this.txtElementosAC.TabIndex = 26;
+            // 
+            // txtElementosABC
+            // 
+            this.txtElementosABC.Location = new System.Drawing.Point(832, 284);
+            this.txtElementosABC.Name = "txtElementosABC";
+            this.txtElementosABC.ReadOnly = true;
+            this.txtElementosABC.Size = new System.Drawing.Size(172, 20);
+            this.txtElementosABC.TabIndex = 27;
+            // 
+            // txtElementosB
+            // 
+            this.txtElementosB.Location = new System.Drawing.Point(1032, 208);
+            this.txtElementosB.Name = "txtElementosB";
+            this.txtElementosB.ReadOnly = true;
+            this.txtElementosB.Size = new System.Drawing.Size(154, 20);
+            this.txtElementosB.TabIndex = 28;
+            // 
+            // txtElementosC
+            // 
+            this.txtElementosC.Location = new System.Drawing.Point(778, 508);
+            this.txtElementosC.Name = "txtElementosC";
+            this.txtElementosC.ReadOnly = true;
+            this.txtElementosC.Size = new System.Drawing.Size(284, 20);
+            this.txtElementosC.TabIndex = 29;
+            // 
+            // txtElementosBC
+            // 
+            this.txtElementosBC.Location = new System.Drawing.Point(985, 366);
+            this.txtElementosBC.Name = "txtElementosBC";
+            this.txtElementosBC.ReadOnly = true;
+            this.txtElementosBC.Size = new System.Drawing.Size(131, 20);
+            this.txtElementosBC.TabIndex = 30;
+            // 
+            // txtElementosU
+            // 
+            this.txtElementosU.Location = new System.Drawing.Point(1054, 609);
+            this.txtElementosU.Name = "txtElementosU";
+            this.txtElementosU.ReadOnly = true;
+            this.txtElementosU.Size = new System.Drawing.Size(261, 20);
+            this.txtElementosU.TabIndex = 31;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 670);
+            this.Controls.Add(this.txtElementosU);
+            this.Controls.Add(this.txtElementosBC);
+            this.Controls.Add(this.txtElementosC);
+            this.Controls.Add(this.txtElementosB);
+            this.Controls.Add(this.txtElementosABC);
+            this.Controls.Add(this.txtElementosAC);
+            this.Controls.Add(this.txtElementosAB);
+            this.Controls.Add(this.txtElementosA);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grbxConjuntos);
             this.Name = "Form1";
@@ -349,6 +430,7 @@
             this.grbxConjuntos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -382,6 +464,14 @@
         private System.Windows.Forms.Button btt3Operacion;
         private System.Windows.Forms.Button btt4Operacion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtElementosA;
+        private System.Windows.Forms.TextBox txtElementosAB;
+        private System.Windows.Forms.TextBox txtElementosAC;
+        private System.Windows.Forms.TextBox txtElementosABC;
+        private System.Windows.Forms.TextBox txtElementosB;
+        private System.Windows.Forms.TextBox txtElementosC;
+        private System.Windows.Forms.TextBox txtElementosBC;
+        private System.Windows.Forms.TextBox txtElementosU;
     }
 }
 
