@@ -30,7 +30,8 @@ namespace Conjunto
 
         private void bttGuardarA_Click(object sender, EventArgs e)
         {
-            if (!txtConjuntoA.Text.Equals("") && !txtConjuntoA.Text.Trim().Equals("{}"))
+            txtConjuntoA.Text = txtConjuntoA.Text.Trim();
+            if (!txtConjuntoA.Text.Equals("") && !txtConjuntoA.Text.Equals("{}"))
             {
                 string A = txtConjuntoA.Text.ToLower(); ;
                 if (!conjuntoA.Contains(A))
@@ -63,11 +64,13 @@ namespace Conjunto
                 }
                 txtConjuntoA.Text = "";
             }
+            txtConjuntoA.Text = "";
         }
 
         private void bttGuardarB_Click(object sender, EventArgs e)
         {
-            if (!txtConjuntoB.Text.Equals("") && !txtConjuntoB.Text.Trim().Equals("{}"))
+            txtConjuntoB.Text = txtConjuntoB.Text.Trim();
+            if (!txtConjuntoB.Text.Equals("") && !txtConjuntoB.Text.Equals("{}"))
             {
                 string B = txtConjuntoB.Text.ToLower();
                 if (!conjuntoB.Contains(B))
@@ -100,6 +103,7 @@ namespace Conjunto
                 }
                 txtConjuntoB.Text = "";
             }
+            txtConjuntoB.Text = "";
         }
 
         /// <summary>
@@ -109,8 +113,9 @@ namespace Conjunto
         /// <param name="e"></param>
         private void bttGuardarC_Click(object sender, EventArgs e)
         {
+            txtConjuntoC.Text = txtConjuntoC.Text.Trim();
             //Verifica si el usuario ingresa algo.
-            if (!txtConjuntoC.Text.Equals("") && !txtConjuntoC.Text.Trim().Equals("{}"))
+            if (!txtConjuntoC.Text.Equals("") && !txtConjuntoC.Equals("{}"))
             {
                 //Asisno el valor inresago a una variable(todo lo cambio a minusculas)
                 string C = txtConjuntoC.Text.ToLower();
@@ -151,6 +156,7 @@ namespace Conjunto
                     //Despues de todos los procedimientos se limpia para el ingreso un proximo elemento.
                     txtConjuntoC.Text = "";
                 }
+                txtConjuntoC.Text = "";
             }
         }
         /// <summary>
@@ -160,12 +166,13 @@ namespace Conjunto
         /// <param name="e"></param>
         private void bttAgregar_Click(object sender, EventArgs e)
         {
+            txtAgregarAU.Text = txtAgregarAU.Text.Trim();
             /*
              * Verifica si el usuario indica que el conjunto universal es vacio y no se ha ingresado elementos a los conjuntos.
              * De ser así, indica que todo es vacio.
              * Sino si el ususario ingreso algo y ya se ingreso algo en algun conjunto, ejecunta el método llenarConjuntoU()c con sus parametros.
              */
-            if (txtAgregarAU.Text.Equals("vacio") && !txtAgregarAU.Text.Trim().Equals("{}") && countA == 2 && countB == 2 && countC == 2 )
+            if (txtAgregarAU.Text.Equals("vacio") && !txtAgregarAU.Text.Equals("{}") && countA == 2 && countB == 2 && countC == 2 )
             {
                 txtMostrarA.Text = "{ }";
                 txtConjuntoA.ReadOnly = true;
@@ -179,7 +186,7 @@ namespace Conjunto
                 txtConjuntoU.Text = "{ }";
                 txtAgregarAU.ReadOnly = true;
             }
-            else if (!txtAgregarAU.Text.Equals("") && !txtAgregarAU.Text.Trim().Equals("{}") && countA>= 3 || countB >= 3 || countC >= 3)
+            else if (!txtAgregarAU.Text.Equals("") && !txtAgregarAU.Text.Equals("{}") && countA>= 3 || countB >= 3 || countC >= 3)
             {
                 aux++;
                 string u = txtAgregarAU.Text;
@@ -280,7 +287,7 @@ namespace Conjunto
                         txtElementosBC.BackColor = Color.Orange;
                     }
                 }
-                else if(conjuntoA.Contains(e) || conjuntoB.Contains(e) || conjuntoC.Contains(e) || conjuntoU.Contains(e))
+                else if(!conjuntoA.Contains(e) || !conjuntoB.Contains(e) || !conjuntoC.Contains(e) || !conjuntoU.Contains(e))
                 {
                     if(conjuntoA.Contains(e))
                     {
@@ -294,7 +301,7 @@ namespace Conjunto
                     {
                         txtElementosC.BackColor = Color.Orange;
                     }
-                    if (conjuntoU.Contains(e) && conjuntoA.Contains(e) && conjuntoB.Contains(e) && conjuntoC.Contains(e))
+                    if (conjuntoU.Contains(e) && !conjuntoA.Contains(e) && !conjuntoB.Contains(e) && !conjuntoC.Contains(e))
                     {
                         txtElementosU.BackColor = Color.Orange;
                     }
