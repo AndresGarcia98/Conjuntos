@@ -43,9 +43,7 @@ namespace Conjunto
                         countA = 1;
                         txtConjuntoA.ReadOnly = true;
                         txtMostrarA.Text = txtMostrarA.Text + A;
-                        conjuntoA.Add(A);
-                        A = "";
-                        llenarConjuntoU(A, aux);
+
                     }
                     else if (countA == 3)
                     {
@@ -82,9 +80,7 @@ namespace Conjunto
                         countB = 1;
                         txtConjuntoB.ReadOnly = true;
                         txtMostrarB.Text = txtMostrarB.Text + B;
-                        conjuntoB.Add(B);
-                        B = "";
-                        llenarConjuntoU(B, aux);
+
                     }
                     else if (countB == 3)
                     {
@@ -117,7 +113,7 @@ namespace Conjunto
             //Verifica si el usuario ingresa algo.
             if (!txtConjuntoC.Text.Equals("") && !txtConjuntoC.Equals("{}"))
             {
-                //Asisno el valor inresago a una variable(todo lo cambio a minusculas)
+                //Asigno el valor ingresado a una variable(todo lo cambio a minusculas)
                 string C = txtConjuntoC.Text.ToLower();
                 if (!conjuntoC.Contains(C))
                 {
@@ -132,12 +128,9 @@ namespace Conjunto
                         countC = 1;
                         //Impido que el usuario ingre mas elementos
                         txtConjuntoC.ReadOnly = true;
-                        //Le muestro al usuario que es el conjunto es vacio, como el ha indicado
+                        //Le muestro al usuario que el conjunto es vacio, como el ha indicado
                         txtMostrarC.Text = txtMostrarC.Text + C;
-                        conjuntoC.Add(C);
-                        //Redifino la variable a vacio Y se la envio a llenarConjuntos() con sus respectivo parametros
-                        C = "";
-                        llenarConjuntoU(C, aux);
+
                     }
                     else if (countC == 3)
                     {
@@ -170,9 +163,9 @@ namespace Conjunto
             /*
              * Verifica si el usuario indica que el conjunto universal es vacio y no se ha ingresado elementos a los conjuntos.
              * De ser así, indica que todo es vacio.
-             * Sino si el ususario ingreso algo y ya se ingreso algo en algun conjunto, ejecunta el método llenarConjuntoU()c con sus parametros.
+             * Sino si el ususario ingreso algo y ya se ingreso algo en algun conjunto, ejecuta el método llenarConjuntoU() con sus parametros.
              */
-            if (txtAgregarAU.Text.Equals("vacio") && !txtAgregarAU.Text.Equals("{}") && countA == 2 && countB == 2 && countC == 2 )
+            if (txtAgregarAU.Text.Equals("vacio") && !txtAgregarAU.Text.Equals("{}") && countA == 2 && countB == 2 && countC == 2)
             {
                 txtMostrarA.Text = "{ }";
                 txtConjuntoA.ReadOnly = true;
@@ -186,13 +179,13 @@ namespace Conjunto
                 txtConjuntoU.Text = "{ }";
                 txtAgregarAU.ReadOnly = true;
             }
-            else if (!txtAgregarAU.Text.Equals("") && !txtAgregarAU.Text.Equals("{}") && countA>= 3 || countB >= 3 || countC >= 3)
+            else if (!txtAgregarAU.Text.Equals("") && !txtAgregarAU.Text.Equals("{}") && countA != 2 || countB != 2 || countC != 2)
             {
                 aux++;
                 string u = txtAgregarAU.Text;
                 llenarConjuntoU(u, aux);
             }
-            //Despues de todos los procedimientos se limpia para el ingreso un proximo elemento.
+            //Despues de todos los procedimientos se limpia para el ingreso de un proximo elemento.
             txtAgregarAU.Text = "";
         }
 
@@ -227,7 +220,7 @@ namespace Conjunto
         /// </summary>
         public void hallarIntersepciones(int j, string e)
         {
-            //Se realizan la operacción de interseccion dee los conjuntos
+            //Se realizan la operacción de interseccion de los conjuntos
             HashSet<string> intrAB = new HashSet<string>(conjuntoA);
             intrAB.IntersectWith(conjuntoB);
 
@@ -250,13 +243,13 @@ namespace Conjunto
                 graficarIntersecciones(2, intrAC, intrABC);
                 graficarIntersecciones(3, intrBC, intrABC);
 
-                //Recorre al interseccion de los tres conjuntos y va imprimiendo sus elementos
+                //Recorre la interseccion de los tres conjuntos y va imprimiendo sus elementos
                 foreach (string i in intrABC)
                 {
                     txtElementosABC.Text = txtElementosABC.Text + " " + i;
                 }
 
-                //Recorre al connuntoU para saber cuales son los elementos que estar en el Universal
+                //Recorre al conjuntoU para saber cuales son los elementos que estan en el Universal
                 foreach (string i in conjuntoU)
                 {
                     if (!intrAB.Contains(i) && !intrAC.Contains(i) && !intrBC.Contains(i) &&
@@ -287,9 +280,9 @@ namespace Conjunto
                         txtElementosBC.BackColor = Color.Orange;
                     }
                 }
-                else if(!conjuntoA.Contains(e) || !conjuntoB.Contains(e) || !conjuntoC.Contains(e) || !conjuntoU.Contains(e))
+                else if (!conjuntoA.Contains(e) || !conjuntoB.Contains(e) || !conjuntoC.Contains(e) || !conjuntoU.Contains(e))
                 {
-                    if(conjuntoA.Contains(e))
+                    if (conjuntoA.Contains(e))
                     {
                         txtElementosA.BackColor = Color.Orange;
                     }
@@ -331,21 +324,21 @@ namespace Conjunto
         public void graficarConjuntos(int j, HashSet<string> inter1, HashSet<string> inter2)
         {
             //Se usa para imprimir los resultados segun los casos(cada caso se refiere a un conjunto)
-            switch(j)
+            switch (j)
             {
                 case 1:
-                    foreach(string i in conjuntoA)
+                    foreach (string i in conjuntoA)
                     {
                         if (!inter1.Contains(i) && !inter2.Contains(i))
                         {
-                            txtElementosA.Text = txtElementosA.Text  + " " + i;
+                            txtElementosA.Text = txtElementosA.Text + " " + i;
                         }
                         else
                         {
                             continue;
                         }
                     }
-                break;
+                    break;
 
                 case 2:
                     foreach (string i in conjuntoB)
@@ -425,18 +418,18 @@ namespace Conjunto
             }
         }
         /// <summary>
-        /// Método que se encarga de mostrar los resulttados de lass operaciones que se indican en el problema.
+        /// Método que se encarga de mostrar los resultados de las operaciones que se indican en el problema.
         /// </summary>
         /// <param name="p">Este parametro indica el resultado final de cada operación ya definida</param>
         public void imprimirResultados(HashSet<string> p)
         {
             //Realiza la interación al resultado final 
-            foreach( string i in p)
+            foreach (string i in p)
             {
                 //Me indica en que elemento voy, ya que no se recorre sino que se realiza una interacción.
                 counter++;
                 //Para saber como se muestran los resultados en la pantalla.
-                if(counter == 1)
+                if (counter == 1)
                 {
                     txtOperaciones.Text = txtOperaciones.Text + i;
                     hallarIntersepciones(1, i);
@@ -449,13 +442,44 @@ namespace Conjunto
             }
         }
 
-        /*
-         * Metodos de las operaciones requeridas.
-         */
-            //Primera Operación.
-         private void button1_Click_1(object sender, EventArgs e)
+        private void bttReiniciar_Click(object sender, EventArgs e)
         {
-            //Me indica si ya se indico que ya ingresaron tods elementos y sino se muestra un mensaje indicando que es necesario.
+            countA = 2;
+            countB = 2;
+            countC = 2;
+            countNoAgregarMas = 0;
+            aux = 0;
+            counter = 0;
+            conjuntoA.Clear();
+            conjuntoB.Clear();
+            conjuntoC.Clear();
+            conjuntoU.Clear();
+            txtConjuntoA.ReadOnly = false;
+            txtConjuntoB.ReadOnly = false;
+            txtConjuntoC.ReadOnly = false;
+            txtAgregarAU.ReadOnly = false;
+            txtMostrarA.Text = "";
+            txtMostrarB.Text = "";
+            txtMostrarC.Text = "";
+            txtConjuntoU.Text = "";
+            txtElementosA.Text = "";
+            txtElementosB.Text = "";
+            txtElementosC.Text = "";
+            txtElementosU.Text = "";
+            txtElementosAB.Text = "";
+            txtElementosAC.Text = "";
+            txtElementosBC.Text = "";
+            txtElementosABC.Text = "";
+            txtOperaciones.Text = "";
+            colorNormal();
+        }
+        /*
+* Metodos de las operaciones requeridas.
+*/
+        //Primera Operación.
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //Me indica si ya se indico que ya ingresaron todos los elementos a los conjuntos y sino se muestra un mensaje indicando que es necesario.
             if (countNoAgregarMas >= 1)
             {
                 colorNormal();
@@ -471,14 +495,14 @@ namespace Conjunto
                 counter = 0;
 
                 //Si no hay ningun elemento se muestra que es vacio.
-                if(txtOperaciones.Text.Equals(""))
+                if (txtOperaciones.Text.Equals(""))
                 {
                     txtOperaciones.Text = "{ }";
                 }
             }
             else
             {
-                MessageBox.Show("Señor Usuario Primero debe Terminar de llenar los conjuntos", "Error",
+                MessageBox.Show("Señor usuario primero debe terminar de llenar los conjuntos", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -494,7 +518,7 @@ namespace Conjunto
                 HashSet<string> compleA = new HashSet<string>(conjuntoU);
                 compleA.ExceptWith(conjuntoA);
                 HashSet<string> df1Y2 = new HashSet<string>(dfSimeBC);
-                df1Y2.ExceptWith(compleA);
+                df1Y2.SymmetricExceptWith(compleA);
                 imprimirResultados(df1Y2);
                 counter = 0;
                 if (txtOperaciones.Text.Equals(""))
@@ -504,7 +528,7 @@ namespace Conjunto
             }
             else
             {
-                MessageBox.Show("Señor Usuario Primero debe Terminar de llenar los conjuntos", "Error",
+                MessageBox.Show("Señor usuario primero debe terminar de llenar los conjuntos", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -515,8 +539,8 @@ namespace Conjunto
             {
                 colorNormal();
                 txtOperaciones.Text = "";
-                HashSet<string> dfAB = new HashSet<string>(conjuntoA);
-                dfAB.ExceptWith(conjuntoB);
+                HashSet<string> dfAB = new HashSet<string>(conjuntoB);
+                dfAB.ExceptWith(conjuntoA);
                 HashSet<string> comple = new HashSet<string>(conjuntoU);
                 comple.ExceptWith(dfAB);
                 HashSet<string> dfSime = new HashSet<string>(comple);
@@ -541,15 +565,15 @@ namespace Conjunto
             {
                 colorNormal();
                 txtOperaciones.Text = "";
-                HashSet<string> dfAB = new HashSet<string>(conjuntoA);
-                dfAB.ExceptWith(conjuntoB);
+                HashSet<string> dfAB = new HashSet<string>(conjuntoB);
+                dfAB.ExceptWith(conjuntoA);
                 HashSet<string> comple = new HashSet<string>(conjuntoU);
                 comple.ExceptWith(dfAB);
                 HashSet<string> compleC = new HashSet<string>(conjuntoU);
-                compleC.ExceptWith(conjuntoU);
-                HashSet<string> union1Y2 = new HashSet<string>(comple);
-                union1Y2.UnionWith(compleC);
-                imprimirResultados(union1Y2);
+                compleC.ExceptWith(conjuntoC);
+                HashSet<string> inter1Y2 = new HashSet<string>(comple);
+                inter1Y2.IntersectWith(compleC);
+                imprimirResultados(inter1Y2);
                 counter = 0;
                 if (txtOperaciones.Text.Equals(""))
                 {
@@ -569,26 +593,28 @@ namespace Conjunto
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
+            countNoAgregarMas++;
             /*
              * Verifica si se ha ingresado por lo menos un elemento a cada conjunto  y se impide que se ingresen mas elementos
              * a los conjuntos o al universal y de no ser así se le indica al usuario que debe llenar los conjuntos 
              */
-            if (!txtMostrarA.Text.Equals("") && !txtMostrarB.Text.Equals("") && !txtMostrarC.Text.Equals(""))
+            if (countNoAgregarMas.Equals(1) && !txtMostrarA.Text.Equals("") && !txtMostrarB.Text.Equals("") && !txtMostrarC.Text.Equals(""))
             {
                 hallarIntersepciones(0, "a");
                 txtConjuntoA.ReadOnly = true;
                 txtConjuntoB.ReadOnly = true;
                 txtConjuntoC.ReadOnly = true;
                 txtAgregarAU.ReadOnly = true;
-                countNoAgregarMas++;
+
             }
-            else
+            else if (countNoAgregarMas.Equals(0) && txtMostrarA.Text.Equals("") && txtMostrarB.Text.Equals("") && txtMostrarC.Text.Equals(""))
             {
                 MessageBox.Show("Debe llenar todos los conjuntos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
+
 
 
     
